@@ -668,6 +668,8 @@ input:checked + label {
 
 .footer__social {
 	gap: 15px;
+	display: flex;
+	list-style: none;
 }
 
 .footer__line {
