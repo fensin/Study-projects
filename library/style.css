@@ -59,6 +59,7 @@ body {
 .header__profile-icon {
     padding-right: 20px;
     padding-left: 10px;
+		display: flex;
 }
 
 .welcome {
@@ -257,13 +258,13 @@ input:checked + label {
     line-height: 40px;
     letter-spacing: 2px;
     text-transform: capitalize;
-    margin-bottom: 20px;
 }
 
 .staff-picks__line {
     width: 60px;
     height: 1px;
     background-color: #BB945F;
+		margin-bottom: 20px;
 }
 
 .book-title {
@@ -682,7 +683,7 @@ input:checked + label {
 	justify-content: space-between;
 }
 
-.credits__text{
+.credits__text {
 	color: #FFF;
 	text-align: center;
 	font-family: Inter;
