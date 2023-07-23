@@ -485,6 +485,18 @@ input:checked + label {
     text-decoration: none   ;
 }
 
+.contacts__email {
+	color: #000;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 40px;
+	letter-spacing: 2px;
+	text-transform: capitalize;	
+	text-decoration: none;
+}
+
 .contacts__text-tty {
     padding: 20px 0;
 }
