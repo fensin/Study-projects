@@ -84,7 +84,7 @@ html {
       #0c0c0e 0.01%,
       rgba(18, 18, 21, 0.1) 100%
     ),
-    url(/img/Books.jpg);
+    url(./img/Books.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
