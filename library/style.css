@@ -390,6 +390,7 @@ input:checked ~ .radio-text {
   font-weight: 700;
   line-height: normal;
   letter-spacing: 1px;
+  transition: 0.5s;
 }
 
 .buy__button:hover {
