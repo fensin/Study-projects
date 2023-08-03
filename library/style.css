@@ -377,6 +377,10 @@ input:checked ~ .radio-text {
   text-transform: capitalize;
 }
 
+.description {
+  width: 357px;
+}
+
 .buy__button {
   height: 30px;
   width: 75px;
