@@ -282,7 +282,6 @@ main {
 
 .season-pick__choose {
   display: flex;
-  gap: 80px;
   padding-left: 15px;
 }
 
@@ -297,6 +296,19 @@ main {
   line-height: normal;
   cursor: pointer;
   position: relative;
+  width: 140px;
+}
+
+.season-pick__container:nth-child(1) {
+  margin-right: 53px;
+}
+
+.season-pick__container:nth-child(2) {
+  margin-right: 49px;
+}
+
+.season-pick__container:nth-child(3) {
+  margin-right: 66px;
 }
 
 .radio-button {
@@ -414,8 +426,8 @@ input:checked ~ .radio-text {
 }
 
 .staff-picks__description {
+  width: 357px;
   height: 320px;
-  width: auto;
   margin-bottom: 16px;
   margin-right: 170px;
   color: #000;
@@ -625,10 +637,18 @@ input:checked ~ .radio-text {
   letter-spacing: 2px;
   text-transform: capitalize;
   text-decoration: none;
+  width: 100%;
+}
+
+.map-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
 
 .map {
-  width: 696px;
+  max-width: 696px;
+  width: 100%;
   height: 414px;
 }
 
@@ -888,11 +908,22 @@ footer {
   line-height: 20px;
   letter-spacing: 2px;
   text-decoration: none;
-  padding-right: 20px;
+} 
+
+._year {
+  text-align: left;
+}
+
+._school {
+  text-align: center;
 }
 
 ._link {
   transition: 0.2s;
+}
+
+._name {
+  text-align: right;
 }
 
 ._link:hover {
@@ -910,6 +941,84 @@ footer {
   transition: 0.4s;
 }
 
+@media screen and (max-width: 1365px) {
+  .about__images:last-child {
+    display: none;
+  }
+
+  .carousel__button:nth-last-child(2) {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1219px){
+  .carousel {
+    padding-top: 20px;
+  }
+
+  .book-card {
+    flex-direction: column;
+    align-items: center;
+  } 
+
+  .left-column {
+    margin: 0 40px 40px 0;
+  }
+
+  .right-column {
+    margin: 0 40px 40px 0;
+  }
+
+  .coffee-shop__menu {
+  flex-direction: column;
+  }
+
+  .coffee-shop__right {
+    padding-top: 40px;
+  }
+
+  .contacts__container {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .map {
+    margin-top: 100px;
+  }
+
+  .map-container {
+    justify-content: center;
+  }
+
+  .card__get-text {
+    width: 600px;
+    height: 80px;
+  }
+
+  .card__get-buttons {
+    margin-top: 45px; 
+  }
+
+  .card__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card__get {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card__get-title {
+    padding-top: 21px;
+  }
+
+  .card__get-text {
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .header__burger {
     display: block;
@@ -918,9 +1027,11 @@ footer {
   .header__navigation {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 90px;
     background-color: #000;
     padding: 100px 107px;
+    width: 332px;
+    height: 570px;
   }
 
   .navigation {
@@ -941,65 +1052,4 @@ footer {
   .carousel__button:last-child {
     display: flex;
   }
-
-}
-
-@media screen and (max-width: 1365px) {
-
-  .about__images:last-child {
-    display: none;
-  }
-
-  .carousel__button:nth-last-child(2) {
-    display: flex;
-  }
-}
-
-@media screen and (max-width: 1220px){
-  .book-card {
-    justify-content: center;
-  } 
-
-  .left-column {
-    margin: 0 40px 20px 0;
-  }
-
-  .right-column {
-    margin: 0 40px 20px 0;
-  }
-
-  .coffee-shop__menu {
-  flex-direction: column;
-  }
-
-  .contacts__container {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .map {
-    margin-top: 100px;
-  }
-}
-
-@media screen and (max-width: 1150px) {
-  .card__container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card__get {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card__get-title {
-    padding-top: 21px;
-  }
-
-  .card__get-text {
-    text-align: center;
-  }
-
 }
