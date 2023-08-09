@@ -93,10 +93,6 @@ header {
   transform: rotate(-45deg);
 }
 
-.header.open .header__burger {
-  margin-left: 38px;
-}
-
 main {
   width: 100%;
   display: flex;
@@ -1063,7 +1059,7 @@ footer {
     position: absolute;
     right: -332px;
     top: 0;
-    background-color: #000;
+    background-color: var(--main-black);
     padding: 100px 107px;
     width: 332px;
     height: 570px;
