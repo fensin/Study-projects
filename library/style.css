@@ -44,49 +44,57 @@ header {
 
 .header__burger {
   display: none;
-  height: auto;
+  height: 20px;
   width: 45px;
   background-color: var(--main-black);
   border: none;
   position: relative;
   margin-left: 40px;
-  margin-bottom: 5px;
 }
 
 .header__burger span {
   position: absolute;
-  width: 100%;
+  right: 0;
+  width: 45px;
   height: 2px;
   background-color: #fff; 
-  transition: background-color 0.5s, opacity 0.25s, transform 0.5s;
+  transition: opacity 0.3s, transform 0.5s;
   will-change: transform;
 }
 
 .header__burger span:hover {
   cursor: pointer;
 }
+  
+.header__burger span:nth-child(1) {
+  transform: translateY(-12px);
+}
 
 .header__burger span:nth-child(2) {
-  transform: translateY(10px);
+  transform: translateY(-2px);
 }
 
 .header__burger span:nth-child(3) {
-  transform: translateY(20px);
+  transform: translateY(8px);
 }
 
 /*Cross while open*/
 
 .header.open .header__burger span:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .header.open .header__burger span:nth-child(2) {
-  transform: translateY(10px);
   opacity: 0;
+  transform: rotate(45deg)
 }
 
 .header.open .header__burger span:nth-child(3) {
-  transform: translateY(10px) rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.header.open .header__burger {
+  margin-left: 38px;
 }
 
 main {
@@ -236,15 +244,36 @@ main {
 
 .about__content-images {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
 }
 
+.about__carret {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  display: none;
+}
+
+._left {
+  margin: 43px 45px 0 auto;
+  padding-left: 50px;
+}
+
+._right {
+  margin: 43px auto 0 45px;
+  padding-right: 50px;
+}
+
+.about__covers {
+  display: flex;
+  justify-content: center;
+}
 
 .about__images {
-  width: 450px;
-  height: 560px;
+  margin: 0 12.5px;
+  max-width: 450px;
+  width: 33%;
 }
 
 .carousel {
@@ -672,8 +701,7 @@ input:checked ~ .radio-text {
 }
 
 .map {
-  max-width: 696px;
-  width: 100%;
+  width: 696px;
   height: 414px;
 }
 
@@ -935,19 +963,17 @@ footer {
   text-decoration: none;
 } 
 
-._year {
-  text-align: left;
-}
-
-._school {
-  text-align: center;
-}
-
 ._link {
   transition: 0.2s;
 }
 
+._year {
+  width: 120px;
+  text-align: left;
+}
+
 ._name {
+  width: 120px;
   text-align: right;
 }
 
@@ -966,16 +992,6 @@ footer {
   transition: 0.4s;
 }
 
-@media screen and (max-width: 1365px) {
-  .about__images:last-child {
-    display: none;
-  }
-
-  .carousel__button:nth-last-child(2) {
-    display: flex;
-  }
-}
-
 @media screen and (max-width: 1219px){
   .carousel {
     padding-top: 20px;
@@ -992,14 +1008,6 @@ footer {
 
   .right-column {
     margin: 0 40px 40px 0;
-  }
-
-  .coffee-shop__menu {
-  flex-direction: column;
-  }
-
-  .coffee-shop__right {
-    padding-top: 40px;
   }
 
   .contacts__container {
@@ -1021,7 +1029,7 @@ footer {
   }
 
   .card__get-buttons {
-    margin-top: 45px; 
+    margin-top: 40px; 
   }
 
   .card__container {
@@ -1037,6 +1045,7 @@ footer {
 
   .card__get-title {
     padding-top: 21px;
+    padding-bottom: 40px;
   }
 
   .card__get-text {
@@ -1044,9 +1053,10 @@ footer {
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1024px) {
   .header__burger {
     display: block;
+    transition: 0.2s;
   }
 
   .header__navigation {
@@ -1078,11 +1088,46 @@ footer {
     margin: 0;
   }
 
-  .about__images:nth-last-child(2) {
+.about__carret {
+  display: block;
+}
+
+  .about__images {
+    width: 100%;
+  }
+
+  .about__images:nth-child(2){
     display: none;
+  }
+
+  .about__images:nth-child(3) {
+    display: none;
+  }
+
+  .carousel__button:nth-last-child(2) {
+    display: flex;
   }
 
   .carousel__button:last-child {
     display: flex;
+  }
+
+  .coffee-shop__menu {
+    flex-direction: column;
+    }
+  
+    .coffee-shop__right {
+      padding-top: 40px;
+    }
+
+  ._school {
+    width: 350px;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .coffee__content-text {
+    width: 732px;
   }
 }
