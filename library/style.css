@@ -1127,3 +1127,22 @@ footer {
     width: 732px;
   }
 }
+
+@media screen and (max-width: 690px){
+  .season-pick__container:nth-child(1) {
+    margin: 0;
+  }
+
+  .season-pick__container:nth-child(2) {
+    margin: 0;
+  }
+
+  .season-pick__container:nth-child(3) {
+    margin: 0;
+}
+
+  .season-pick__choose {
+    justify-content: space-between;
+  }
+
+}
