@@ -4,8 +4,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-black: #0c0c0e;
+}
+
 body {
-  background-color: #8E8E8E;
+  background-color: #8e8e8e;
 }
 
 html {
@@ -13,20 +17,86 @@ html {
 }
 
 .wrapper {
-  min-width: 1440px;
+  max-width: 1440px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+header {
+  width: 100%;
+  display: flex;
 }
 
 .header__container {
-  width: 1440px;
-  margin: 0 auto;
+  width: 100%;
   height: 90px;
-  background-color: #0c0c0e;
+  padding: 0 20px;
+  background-color: var(--main-black);
   display: flex;
   align-items: center;
   justify-content: end;
+}
+
+.header__burger {
+  display: none;
+  height: 20px;
+  width: 45px;
+  background-color: var(--main-black);
+  border: none;
+  position: relative;
+  margin-left: 40px;
+}
+
+.header__burger span {
+  position: absolute;
+  right: 0;
+  width: 45px;
+  height: 2px;
+  background-color: #fff; 
+  transition: opacity 0.3s, transform 0.5s;
+  will-change: transform;
+}
+
+.header__burger span:hover {
+  cursor: pointer;
+}
+  
+.header__burger span:nth-child(1) {
+  transform: translateY(-12px);
+}
+
+.header__burger span:nth-child(2) {
+  transform: translateY(-2px);
+}
+
+.header__burger span:nth-child(3) {
+  transform: translateY(8px);
+}
+
+/*Cross while open*/
+
+.header.open .header__burger span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.header.open .header__burger span:nth-child(2) {
+  opacity: 0;
+  transform: rotate(45deg)
+}
+
+.header.open .header__burger span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-title {
@@ -37,7 +107,6 @@ html {
   font-weight: 400;
   line-height: 50px;
   letter-spacing: 0.6px;
-  padding-left: 20px;
   margin-right: auto;
 }
 
@@ -78,18 +147,18 @@ html {
 }
 
 .header__profile-icon {
-  padding-right: 20px;
   padding-left: 10px;
   display: flex;
+  z-index: 1;
 }
 
 .welcome {
   height: 600px;
-  min-width: 1440px;
+  width: 100%;
   background-image: linear-gradient(
       180deg,
-      #0c0c0e 0%,
-      #0c0c0e 0.01%,
+      var(--main-black) 0%,
+      var(--main-black) 0.01%,
       rgba(18, 18, 21, 0.1) 100%
     ),
     url(./img/Books.jpg);
@@ -103,12 +172,12 @@ html {
 }
 
 .welcome__container {
-  width: 1440px;
+  width: 100%;
   margin: 0 auto;
 }
 
 .welcome__text-box {
-  background-color: #0c0c0e;
+  background-color: var(--main-black);
   width: 600px;
   height: 220px;
   padding: 35px 40px;
@@ -141,7 +210,7 @@ html {
 }
 
 .section-title__text {
-  color: #0c0c0e;
+  color: var(--main-black);
   font-family: Forum;
   font-size: 40px;
   font-style: normal;
@@ -152,7 +221,7 @@ html {
 }
 
 .section-title__line {
-  background-color: #0c0c0e;
+  background-color: var(--main-black);
   height: 1px;
   width: 50px;
   margin-bottom: 40px;
@@ -166,17 +235,41 @@ html {
   font-style: normal;
   font-weight: 400;
   line-height: 40px;
-  padding-bottom: 20px;
+  padding: 0 20px 20px 20px;
 }
 
 .about__content-images {
   display: flex;
-  gap: 25px;
+  justify-content: center;
+  width: 100%;
+}
+
+.about__carret {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  display: none;
+}
+
+._left {
+  margin: 43px 45px 0 auto;
+  padding-left: 50px;
+}
+
+._right {
+  margin: 43px auto 0 45px;
+  padding-right: 50px;
+}
+
+.about__covers {
+  display: flex;
+  justify-content: center;
 }
 
 .about__images {
-  width: 450px;
-  height: 560px;
+  margin: 0 12.5px;
+  max-width: 450px;
+  width: 33%;
 }
 
 .carousel {
@@ -191,6 +284,14 @@ html {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.carousel__button:last-child {
+  display: none;
+}
+
+.carousel__button:nth-last-child(2) {
+  display: none;
 }
 
 .carousel__circle {
@@ -231,7 +332,6 @@ html {
 
 .season-pick__choose {
   display: flex;
-  gap: 80px;
   padding-left: 15px;
 }
 
@@ -246,6 +346,19 @@ html {
   line-height: normal;
   cursor: pointer;
   position: relative;
+  width: 140px;
+}
+
+.season-pick__container:nth-child(1) {
+  margin-right: 53px;
+}
+
+.season-pick__container:nth-child(2) {
+  margin-right: 49px;
+}
+
+.season-pick__container:nth-child(3) {
+  margin-right: 66px;
 }
 
 .radio-button {
@@ -276,7 +389,7 @@ html {
   height: 9px;
   width: 9px;
   border-radius: 50%;
-  background-color: #0c0c0e;
+  background-color: var(--main-black);
   opacity: 0;
   transition: 0.2s;
 }
@@ -309,7 +422,7 @@ input:checked ~ .radio-text {
 }
 
 .left-column {
-  margin: 0 0 40px 20px;
+  margin: 0 40px 40px 20px;
 }
 
 .right-column {
@@ -363,8 +476,8 @@ input:checked ~ .radio-text {
 }
 
 .staff-picks__description {
+  width: 357px;
   height: 320px;
-  width: auto;
   margin-bottom: 16px;
   margin-right: 170px;
   color: #000;
@@ -386,7 +499,7 @@ input:checked ~ .radio-text {
   width: 75px;
   background-color: #fff;
   border-radius: 2px;
-  border: 1px solid #0c0c0e;
+  border: 1px solid var(--main-black);
   text-align: center;
   font-family: Inter;
   font-size: 10px;
@@ -429,9 +542,14 @@ input:checked ~ .radio-text {
 }
 
 .book-card {
-  gap: 260px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.favorites-content__winter {
+  display: flex;
+  flex-direction: column;
 }
 
 .favorites-content__spring {
@@ -457,8 +575,8 @@ input:checked ~ .radio-text {
 
 .coffee-shop__menu {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 480px;
   padding-top: 20px;
 }
 
@@ -476,6 +594,7 @@ input:checked ~ .radio-text {
 .coffee-shop__left {
   display: flex;
   flex-direction: column;
+  align-items: start;
   gap: 40px;
 }
 
@@ -572,6 +691,18 @@ input:checked ~ .radio-text {
   letter-spacing: 2px;
   text-transform: capitalize;
   text-decoration: none;
+  width: 100%;
+}
+
+.map-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.map {
+  width: 696px;
+  height: 414px;
 }
 
 ._contacts__link {
@@ -681,7 +812,7 @@ input:checked ~ .radio-text {
 }
 
 .card__button {
-  color: #0c0c0e;
+  color: var(--main-black);
   text-align: center;
   font-family: Inter;
   font-size: 20px;
@@ -691,7 +822,7 @@ input:checked ~ .radio-text {
   letter-spacing: 1px;
   padding: 10px 40px;
   background-color: #fff;
-  border: 1px solid #0c0c0e;
+  border: 1px solid var(--main-black);
   border-radius: 2px;
   transition: 0.5s;
 }
@@ -743,7 +874,7 @@ input:checked ~ .radio-text {
 .get__button {
   display: flex;
   border-radius: 2px;
-  border: 1px solid #0c0c0e;
+  border: 1px solid var(--main-black);
   width: 75px;
   height: 30px;
   padding: 10px 0px;
@@ -751,7 +882,7 @@ input:checked ~ .radio-text {
   align-items: center;
   flex-shrink: 0;
   background-color: #fff;
-  color: #0c0c0e;
+  color: var(--main-black);
   text-align: center;
   font-family: Inter;
   font-size: 10px;
@@ -769,11 +900,15 @@ input:checked ~ .radio-text {
   cursor: pointer;
 }
 
+footer {
+  width: 100%;
+}
+
 .footer__container {
   margin: 0 auto;
   padding: 20px 20px 0 20px;
-  min-width: 1440px;
-  background-color: #0c0c0e;
+  max-width: 1440px;
+  background-color: var(--main-black);
 }
 
 .footer__info-text {
@@ -804,7 +939,7 @@ input:checked ~ .radio-text {
 }
 
 .footer__line {
-  width: 1400px;
+  width: 100%;
   height: 1px;
   background-color: #fff;
   margin-top: 30px;
@@ -826,11 +961,20 @@ input:checked ~ .radio-text {
   line-height: 20px;
   letter-spacing: 2px;
   text-decoration: none;
-  padding-right: 20px;
-}
+} 
 
 ._link {
   transition: 0.2s;
+}
+
+._year {
+  width: 120px;
+  text-align: left;
+}
+
+._name {
+  width: 120px;
+  text-align: right;
 }
 
 ._link:hover {
@@ -846,4 +990,162 @@ input:checked ~ .radio-text {
 .social__icon:hover {
   fill: #bb945f;
   transition: 0.4s;
+}
+
+@media screen and (max-width: 1219px){
+  .carousel {
+    padding-top: 20px;
+  }
+
+  .book-card {
+    flex-direction: column;
+    align-items: center;
+  } 
+
+  .left-column {
+    margin: 0 40px 40px 0;
+  }
+
+  .right-column {
+    margin: 0 40px 40px 0;
+  }
+
+  .contacts__container {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .map {
+    margin-top: 100px;
+  }
+
+  .map-container {
+    justify-content: center;
+  }
+
+  .card__get-text {
+    width: 600px;
+    height: 80px;
+  }
+
+  .card__get-buttons {
+    margin-top: 40px; 
+  }
+
+  .card__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card__get {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card__get-title {
+    padding-top: 21px;
+    padding-bottom: 40px;
+  }
+
+  .card__get-text {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header__burger {
+    display: block;
+    transition: 0.2s;
+  }
+
+  .header__navigation {
+    position: absolute;
+    right: -332px;
+    top: 0;
+    background-color: var(--main-black);
+    padding: 100px 107px;
+    width: 332px;
+    height: 570px;
+    visibility: hidden;
+    transition: transform 0.5s, visibility 0.5s;
+    will-change: transform;
+  }
+
+  .navigation {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header.open .header__navigation {
+    transform: translateX(-100%);
+    visibility: visible;
+  }
+
+  .navigation-item {
+    margin: 0;
+  }
+
+.about__carret {
+  display: block;
+}
+
+  .about__images {
+    width: 100%;
+  }
+
+  .about__images:nth-child(2){
+    display: none;
+  }
+
+  .about__images:nth-child(3) {
+    display: none;
+  }
+
+  .carousel__button:nth-last-child(2) {
+    display: flex;
+  }
+
+  .carousel__button:last-child {
+    display: flex;
+  }
+
+  .coffee-shop__menu {
+    flex-direction: column;
+    }
+  
+    .coffee-shop__right {
+      padding-top: 40px;
+    }
+
+  ._school {
+    width: 350px;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .coffee__content-text {
+    width: 732px;
+  }
+}
+
+@media screen and (max-width: 690px){
+  .season-pick__container:nth-child(1) {
+    margin: 0;
+  }
+
+  .season-pick__container:nth-child(2) {
+    margin: 0;
+  }
+
+  .season-pick__container:nth-child(3) {
+    margin: 0;
+}
+
+  .season-pick__choose {
+    justify-content: space-between;
+  }
 }
