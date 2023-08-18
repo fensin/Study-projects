@@ -1123,12 +1123,6 @@ footer {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .coffee__content-text {
-    width: 732px;
-  }
-}
-
 @media screen and (max-width: 690px){
   .season-pick__container:nth-child(1) {
     margin: 0;
