@@ -94,14 +94,29 @@ header {
   transform: rotate(-45deg);
 }
 
-.ModalProfile {
+.ModalProfile_auth,
+.ModalProfile_noAuth {
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 80px;
   height: 115px;
   background-color: #fff;
   display: flex;
-  display: none;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0);
+  transition: transform 0.3s 0s ease-in-out, opacity 0.2s 0s ease-in-out, visibility 0s 0.2s;
+}
+
+.ModalProfile_auth.auth,
+.ModalProfile_noAuth.noAuth {
+  transform: translateY(25%);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s, opacity 0.2s, visibility 0s 0.2s;
 }
 
 .ModalProfile__head {
@@ -129,28 +144,35 @@ header {
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .ModalProfile__link:last-child {
   margin-top: 10px;
 }
 
-.ModalLogReg {
+.modal {
   background-color: #fff;
   position: relative;
   padding: 20px 25px;
-  display: none;
+  width: 250px;
 }
 
-.ModalLogReg__cross {
+.modal__cross {
   position: absolute;
   right: 15px;
   top: 15px;
   cursor: pointer;
 }
 
-.ModalLogReg__title {
+.modal__form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__title {
   color: #000;
   text-align: center;
   font-family: Forum;
@@ -163,7 +185,12 @@ header {
   margin-bottom: 20px;
 }
 
-.LogReg__input-title {
+.LogReg {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__form-label {
   color: #000;
   text-align: left;
   font-family: Inter;
@@ -175,14 +202,14 @@ header {
   margin-bottom: 10px;
 }
 
-.LogReg__input {
+.modal__form-input {
   margin-bottom: 10px;
   border: 1px solid var(--light-brown);
-  width: 200px;
+  width: 100%;
   height: 20px;
 }
 
-.LogReg__input:focus {
+.modal__form-input:focus {
   outline: var(--light-brown) solid 1px;
 }
 
@@ -199,8 +226,11 @@ header {
   background-color: transparent;
   width: 75px;
   height: 30px;
-  margin: 10px 0;
   transition: 0.5s;
+}
+
+.modal__form-submit {
+  margin: 10px 0;
 }
 
 .modalButton:hover {
@@ -210,7 +240,7 @@ header {
     cursor: pointer;
 }
 
-.ModalLogReg__text {
+.modal__text {
   color: #000;
   text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
   font-family: Inter;
@@ -218,6 +248,25 @@ header {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.modal__link {
+  color: var(--main-black);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-decoration-line: underline;
+}
+
+.LogReg-form__item {
+  margin-bottom: 10px;
 }
 
 .ModalLogReg__link {
@@ -229,7 +278,10 @@ header {
   font-weight: 700;
   line-height: normal;
   letter-spacing: 1px;
-  text-decoration-line: underline;  
+  background-color: transparent;
+  border: none; 
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .ModalMyProf {
@@ -364,7 +416,7 @@ header {
 .ModalMyProf__rented-list{
   overflow-x: auto;
   overflow-y: auto; 
-  min-height: 50px;
+  height: 50px;
 }
 
 .ModalMyProf__rented-list li {
@@ -416,6 +468,21 @@ header {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.modalBuyCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalBuyCard .LogReg__input:nth-child(4){
+  width: 50px;
+  display: block;
+}
+
+.modalBuyCard .LogReg__input:nth-child(5) {
+  width: 50px;
+  display: block;
 }
 
 main {
@@ -471,10 +538,14 @@ main {
   width: 100%;
 }
 
-.header__profile-icon {
+.header__profile {
+  position: relative;
   padding-left: 10px;
+}
+
+.header__profile-icon {
   display: flex;
-  z-index: 1;
+  cursor: pointer;
 }
 
 .welcome {
@@ -868,20 +939,51 @@ input:checked ~ .radio-text {
   justify-content: space-between;
 }
 
-.favorites-content__winter {
-  display: flex;
-  flex-direction: column;
-}
-
-.favorites-content__spring {
+.favorites-content.winter .favorites-content__spring {
   display: none;
 }
 
-.favorites-content__summer {
+.favorites-content.winter .favorites-content__summer {
   display: none;
 }
 
-.favorites-content__autumn {
+.favorites-content.winter .favorites-content__autumn {
+  display: none;
+}
+
+.favorites-content.spring .favorites-content__summer {
+  display: none;
+}
+
+.favorites-content.spring .favorites-content__autumn {
+  display: none;
+}
+
+.favorites-content.spring .favorites-content__winter {
+  display: none;
+}
+
+.favorites-content.summer .favorites-content__autumn {
+  display: none;
+}
+
+.favorites-content.summer .favorites-content__winter {
+  display: none;
+}
+
+.favorites-content.summer .favorites-content__spring {
+  display: none;
+}
+
+.favorites-content.autumn .favorites-content__winter {
+  display: none;
+}
+
+.favorites-content.autumn .favorites-content__spring {
+  display: none;
+}
+
+.favorites-content.autumn .favorites-content__summer {
   display: none;
 }
 
@@ -1119,13 +1221,21 @@ input:checked ~ .radio-text {
   border-radius: 10px;
   width: 520px;
   padding: 8px 0 8px 20px;
-  color: #8e8e8e;
   font-family: Forum;
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: 50px;
   letter-spacing: 0.6px;
+}
+
+.card__input:disabled {
+  background-color: #FFF;
+  color: var(--light-brown);
+}
+
+.card__container.logged .card__input::placeholder {
+  color: var(--light-brown); 
 }
 
 .card__form {
@@ -1148,6 +1258,20 @@ input:checked ~ .radio-text {
   transition: 0.5s;
 }
 
+.card__box .ModalMyProf__counters {
+  justify-content: center;
+  gap: 35px;
+}
+
+.card__box .counter {
+  gap: 1px;
+}
+
+.card__box .counter__title {
+  letter-spacing: 0.2px;
+  font-size: 10px;
+}
+
 .card__button-check {
   display: flex;
   justify-content: center;
@@ -1158,6 +1282,18 @@ input:checked ~ .radio-text {
   background: var(--light-brown);
   transition: 0.5s;
   cursor: pointer;
+}
+
+.noActive {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  display: flex;
 }
 
 .card__get-title {
@@ -1463,4 +1599,81 @@ footer {
   .season-pick__choose {
     justify-content: space-between;
   }
+}
+
+.modalBuyCard {
+  background-color: #fff;
+  width: 650px;
+  height: 540px;
+}
+
+.modalBuyCard__head {
+  padding: 20px 0;
+  background-color: var(--main-black);
+  position: relative;
+}
+
+.modalBuyCard__title {
+  color: #FFF;
+  text-align: center;
+  font-family: Forum;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.modalBuyCard svg {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  cursor: pointer;
+}
+
+.modalBuyCard__content {
+  margin: 30px 40px 40px 40px;
+  display: flex;
+}
+
+.modalBuyCard__content .modal__form {
+  width: 200px;
+  margin-right: 30px;
+}
+
+.modalBuyCard__content .modal__form-submit {
+  display: flex;
+}
+
+.modal__form-submit h6 {
+  margin-left: 25px;
+  color: var(--main-black);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; 
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.modalBuyCard__text {
+  width: 330px;
+  color: #8E8E8E;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; 
+  letter-spacing: 2px;
+}
+
+.split-input {
+  display: flex;
+  gap: 10px;
+}
+
+.split-input input {
+  width: 45px;
 }

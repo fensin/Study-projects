@@ -25,8 +25,6 @@
       rel="stylesheet"
    >
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
-    <script defer src="main.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -52,84 +50,30 @@
               </li>
             </ul>
           </nav>
-          <a class="header__profile-icon" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
-              </svg>
-          </a>
+          <div class="header__profile" id="profile">
+            <div class="header__profile-icon noAuth">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
+                </svg>
+            </div>
+            <div class="ModalProfile_noAuth">
+              <h3 class="ModalProfile__head">Profile</h3>
+              <div class="ModalProfile__line"></div>
+              <button class="ModalProfile__link">Log In</button>
+              <button class="ModalProfile__link">Register</button>
+            </div>
+            <div class="ModalProfile_auth">
+              <h3 class="ModalProfile__head">Profile</h3>
+              <div class="ModalProfile__line"></div>
+              <button class="ModalProfile__link">My Profile</button>
+              <button class="ModalProfile__link">Log Out</button>
+            </div>
+          </div>
           <button class="header__burger" id="burger">
             <span></span>
             <span></span>
             <span></span>
           </button>
-        </div>
-        <div class="ModalProfile Auth">
-          <h3 class="ModalProfile__head">Profile</h3>
-          <div class="ModalProfile__line"></div>
-          <a href="" class="ModalProfile__link">Log In</a>
-          <a href="" class="ModalProfile__link">Register</a>
-        </div>
-        <div class="ModalProfile NoAuth">
-          <h3 class="ModalProfile__head">Profile</h3>
-          <div class="ModalProfile__line"></div>
-          <a href="" class="ModalProfile__link">My Profile</href>
-          <a href="" class="ModalProfile__link">Log Out</a>
-        </div>
-        <div class="ModalLogReg">
-          <h3 class="ModalLogReg__title">Login</h3>
-          <div class="ModalLogReg__cross">
-            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-              <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
-              <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
-            </svg>
-          </div>
-          <form class="LogReg" name="LogIn" action="">
-            <label>
-              <div class="LogReg__input-title">E-mail or readers card</div>
-              <input class="LogReg__input" type="text" required>
-            </label>
-            <label>
-              <div class="LogReg__input-title">Password</div>
-              <input class="LogReg__input" type="text" required>
-            </label>
-            <button class="modalButton">Log In</button>
-          </form>
-          <div class="ModalLogReg__textBox">
-            <span class="ModalLogReg__text">Don’t have an account?</span>
-            <a href="" class="ModalLogReg__link">Register</a>
-          </div>
-        </div>
-        <div class="ModalLogReg">
-          <h3 class="ModalLogReg__title">Register</h3>
-          <div class="ModalLogReg__cross">
-            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-              <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
-              <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
-            </svg>
-          </div>
-          <form class="LogReg" name="LogIn" action="">
-            <label>
-              <div class="LogReg__input-title">First name</div>
-              <input class="LogReg__input" type="text" required>
-            </label>
-            <label>
-              <div class="LogReg__input-title">Last name</div>
-              <input class="LogReg__input" type="text" required>
-            </label>
-            <label>
-              <div class="LogReg__input-title">E-mail</div>
-              <input class="LogReg__input" type="text" required>
-            </label>
-            <label>
-              <div class="LogReg__input-title">Password</div>
-              <input class="LogReg__input" type="text" required>
-            </label>
-            <button class="modalButton">Sign Up</button>
-          </form>
-          <div class="ModalLogReg__textBox">
-            <span class="ModalLogReg__text">Already have an account?</span>
-            <a href="" class="ModalLogReg__link">Login</a>
-          </div>
         </div>
       </header>
       <div class="ModalMyProf">
@@ -207,6 +151,7 @@
           </div>
         </div>
       </div>
+      
       <main class="main">
         <section class="welcome">
           <div class="welcome__container">
@@ -279,7 +224,7 @@
             <h2 class="section-title__text" id="favorites">Favorites</h2>
             <div class="section-title__line"></div>
           </div>
-          <div class="favorites-content">
+          <div class="favorites-content winter">
             <div class="season-pick">
               <div class="season-pick__subtitle">
                 <h3 class="season-pick__subtitle-text">
@@ -288,7 +233,7 @@
               </div>
               <div class="season-pick__choose">
                 <div class="season-pick__container">
-                  <label class="radio-label">
+                  <label class="radio-label" id="winter">
                     <input
                       class="radio-button"
                       type="radio"
@@ -301,7 +246,7 @@
                   </label>
                 </div>
                 <div class="season-pick__container">
-                  <label class="radio-label">
+                  <label class="radio-label" id="spring">
                     <input
                       class="radio-button"
                       type="radio"
@@ -313,7 +258,7 @@
                   </label>
                 </div>
                 <div class="season-pick__container">
-                  <label class="radio-label">
+                  <label class="radio-label" id="summer">
                     <input
                       class="radio-button"
                       type="radio"
@@ -325,7 +270,7 @@
                   </label>
                 </div>
                 <div class="season-pick__container">
-                  <label class="radio-label">
+                  <label class="radio-label" id="autumn">
                     <input
                       class="radio-button"
                       type="radio"
@@ -941,7 +886,7 @@
             <h2 class="section-title__text" id="card">Digital Library Cards</h2>
             <div class="section-title__line"></div>
           </div>
-          <div class="card__container">
+          <div class="card__container unLogged active">
             <div class="card__find">
               <h3 class="card__title">Find your Library card</h3>
               <div class="card__box">
@@ -966,6 +911,82 @@
                   <button type="button" class="card__button">
                     Check the card
                   </button>
+                </div>
+              </div>
+            </div>
+            <div class="card__get">
+              <h3 class="card__get-title">Get a reader card</h3>
+              <p class="card__get-text">
+                You will be able to see a reader card after logging into account
+                or you can register a new account
+              </p>
+              <div class="card__get-buttons">
+                <button type="button" class="get__button">Sign up</button>
+                <button type="button" class="get__button">Log in</button>
+              </div>
+            </div>
+          </div>
+          <div class="card__container logged noActive">
+            <div class="card__find">
+              <h3 class="card__title">Your Library card</h3>
+              <div class="card__box">
+                <div class="card__inside-box">
+                  <h3 class="inside-box__title">Brooklyn Public Library</h3>
+                  <form class="card__form">
+                    <input
+                      class="card__input"
+                      type="text"
+                      placeholder="John Doe"
+                      disabled
+                    >
+                  </form>
+                  <form class="card__form">
+                    <input
+                      class="card__input"
+                      type="text"
+                      placeholder="R1242152"
+                      disabled
+                    >
+                  </form>
+                </div>
+                <div class="ModalMyProf__counters">
+                  <div class="counter">
+                    <h6 class="counter__title">Visits</h6>
+                    <div class="counter__icon">
+                      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76142 15.5 5C15.5 2.23858 13.2614 0 10.5 0C7.73858 0 5.5 2.23858 5.5 5C5.5 7.76142 7.73858 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5L0.5 21C0.5 18.3478 1.55357 15.8043 3.42893 13.9289C5.3043 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
+                      </svg>
+                    </div>
+                    <p class="counter__num">
+                      23
+                    </p>
+                  </div>
+                  <div class="counter">
+                    <h6 class="counter__title">Bonuses</h6>
+                    <div class="counter__icon">
+                      <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="Star 1" d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
+                      </svg>
+                    </div>
+                    <p class="counter__num">
+                      1240
+                    </p>
+                  </div>
+                  <div class="counter">
+                    <h6 class="counter__title">Books</h6>
+                    <div class="counter__icon">
+                      <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="book">
+                          <rect id="Rectangle 32" width="20" height="21" fill="#BB945F"/>
+                          <rect id="Rectangle 33" x="2" width="1" height="19" fill="#826844"/>
+                          <rect id="Rectangle 35" x="1" width="1" height="21" fill="white"/>
+                        </g>
+                      </svg>
+                    </div>
+                    <p class="counter__num">
+                      VAR
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1062,5 +1083,124 @@
           </div>
         </footer>
       </div>
+    </div>
+    <div class="modal">
+      <h3 class="modal__title">Login</h3>
+      <div class="modal__cross">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+          <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+          <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+        </svg>
+      </div>
+      <form class="modal__form">
+        <div class="modal__form-item">
+          <label class="modal__form-label" for="emailCard">E-mail or readers card</label>
+          <input id="emailCard" class="modal__form-input" type="text" required>
+        </div>
+        <div class="modal__form-item">
+          <label class="modal__form-label" for="password">Password</label>
+          <input id="password" class="modal__form-input" type="password" minlength="8" required>
+        </div>
+        <div class="modal__form-submit">
+          <button class="modalButton">Sign Up</button>
+        </div>
+      </form>
+      <div class="modal__textBox">
+        <span class="modal__text">Don’t have an account?</span>
+        <button class="modal__link">Register</button>
+      </div>
+    </div>
+    <div class="modal">
+      <h3 class="modal__title">Register</h3>
+      <div class="modal__cross">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+          <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+          <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+        </svg>
+      </div>
+      <form class="modal__form">
+        <div class="modal__form-item">
+          <label class="modal__form-label" for="firstName">First name</label>
+          <input id="firstName" class="modal__form-input" type="text" required>
+        </div>
+        <div class="modal__form-item">
+          <label class="modal__form-label" for="lastName">Last name</label>
+          <input id="lastName" class="modal__form-input" type="text" required>
+        </div>
+        <div class="modal__form-item">
+          <label class="modal__form-label" for="emailCard">E-mail or readers card</label>
+          <input id="emailCard" class="modal__form-input" type="text" required>
+        </div>
+        <div class="modal__form-item">
+          <label class="modal__form-label" for="password">Password</label>
+          <input id="password" class="modal__form-input" type="password" minlength="8" required>
+        </div>
+        <div class="modal__form-submit">
+          <button class="modalButton">Sign Up</button>
+        </div>
+      </form>
+      <div class="modal__textBox">
+        <span class="modal__text">Don’t have an account?</span>
+        <button class="modal__link">Register</button>
+      </div>
+    </div>
+    <div class="modalBuyCard">
+      <div class="modalBuyCard__head">
+        <h3 class="modalBuyCard__title">Buy a library card</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+          <path d="M2 16.8507L17 2" stroke="white" stroke-width="3"/>
+          <path d="M2 2.14929L17 17" stroke="white" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="modalBuyCard__content">
+        <form class="modal__form">
+          <div class="modal__form-item">
+            <label class="modal__form-label" for="bankNum">Bank number</label>
+            <input id="bankNum" class="modal__form-input" required>
+          </div>
+          <div class="modal__form-item">
+            <label class="modal__form-label" for="expCode">Expiration code</label>
+            <div class="split-input">
+              <input id="expCode" class="modal__form-input" required>
+              <input id="expCode" class="modal__form-input" required>
+            </div>
+          </div>
+          <div class="modal__form-item">
+            <label class="modal__form-label" for="expCode">CVC</label>
+            <div class="split-input">
+              <input id="expCode" class="modal__form-input" required>
+            </div>
+          </div>
+          <div class="modal__form-item">
+            <label class="modal__form-label" for="bankNum">Bank number</label>
+            <input id="bankNum" class="modal__form-input" required>
+          </div>
+          <div class="modal__form-item">
+            <label class="modal__form-label" for="bankNum">Bank number</label>
+            <input id="bankNum" class="modal__form-input" required>
+          </div>
+          <div class="modal__form-item">
+            <label class="modal__form-label" for="bankNum">Bank number</label>
+            <input id="bankNum" class="modal__form-input" required>
+          </div>
+          <div class="modal__form-submit">
+            <button class="modalButton">Sign Up</button>
+            <h6>$ 25.00</h6>
+          </div>
+        </form>
+        <div class="modalBuyCard__text">
+          <p>
+            If you are live, work, attend school,
+            or pay property taxes in New York State,
+            you can get a $25 digital library card
+            right now using this online form.
+            Visitors to New York State can also use
+            this form to apply for a temporary card.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+    <script defer src="main.js"></script>
   </body>
 </html>
