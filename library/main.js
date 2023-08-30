@@ -67,8 +67,12 @@ PAG_BTN5.addEventListener('click', () => {
   CAROUSEL.style.cssText = 'transform: translateX(-80.3%)'
 });
 
-
-CAROUSEL.addEventListener('animationend', () => {
-  CAROUSEL.classList.remove('transition-right')
+document.addEventListener("DOMContentLoaded", function(){
+  document.getElementById("burger").addEventListener("click",function()
+  {
+    document.querySelector(".header").classList.toggle("open")
+  })
 })
+
+
 
