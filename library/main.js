@@ -17,6 +17,11 @@ const PAG_CIRC5 = document.querySelector('#carousel__circle5');
 
 const inlineStyles = CAROUSEL.style;
 
+document.getElementById("burger").addEventListener("click",function()
+{
+ document.querySelector(".header").classList.toggle("open")
+})
+
 PAG_BTN1.addEventListener('click', () => {
   //CAROUSEL.classList.replace('transition-right', 'transition-left')//
   PAG_BTN1.setAttribute('disabled', '')
@@ -96,12 +101,4 @@ PAG_BTN5.addEventListener('click', () => {
 BTN_LEFT.addEventListener('click', leftSlide);
 BTN_RIGHT.addEventListener('click', rightSlide);
 
-
-
-document.addEventListener("DOMContentLoaded", function(){
-  document.getElementById("burger").addEventListener("click",function()
-  {
-    document.querySelector(".header").classList.toggle("open")
-  })
-})
 
