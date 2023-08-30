@@ -1,6 +1,7 @@
 const BTN_LEFT = document.querySelector('#btn-left');
 const BTN_RIGHT = document.querySelector('#btn-right');
 const CAROUSEL = document.querySelector('#carousel');
+const IMAGE_CONT = document.querySelector('#carousel-image');
 
 const PAG_BTN1 = document.querySelector('#pag-btn1');
 const PAG_BTN2 = document.querySelector('#pag-btn2');
@@ -18,6 +19,11 @@ const inlineStyles = CAROUSEL.style;
 
 PAG_BTN1.addEventListener('click', () => {
   //CAROUSEL.classList.replace('transition-right', 'transition-left')//
+  PAG_BTN1.setAttribute('disabled', '')
+  PAG_BTN2.removeAttribute('disabled', '')
+  PAG_BTN3.removeAttribute('disabled', '')
+  PAG_BTN4.removeAttribute('disabled', '')
+  PAG_BTN5.removeAttribute('disabled', '')
   PAG_CIRC1.classList.add('pag_active')
   PAG_CIRC2.classList.remove('pag_active')
   PAG_CIRC3.classList.remove('pag_active')
@@ -29,6 +35,11 @@ PAG_BTN1.addEventListener('click', () => {
 
 PAG_BTN2.addEventListener('click', () => {
   //CAROUSEL.classList.add('transition-right')//
+  PAG_BTN2.setAttribute('disabled', '')
+  PAG_BTN1.removeAttribute('disabled', '')
+  PAG_BTN3.removeAttribute('disabled', '')
+  PAG_BTN4.removeAttribute('disabled', '')
+  PAG_BTN5.removeAttribute('disabled', '')
   PAG_CIRC2.classList.add('pag_active')
   PAG_CIRC1.classList.remove('pag_active')
   PAG_CIRC3.classList.remove('pag_active')
@@ -39,6 +50,11 @@ PAG_BTN2.addEventListener('click', () => {
 
 PAG_BTN3.addEventListener('click', () => {
   //CAROUSEL.classList.add('transition-right')//
+  PAG_BTN3.setAttribute('disabled', '')
+  PAG_BTN2.removeAttribute('disabled', '')
+  PAG_BTN1.removeAttribute('disabled', '')
+  PAG_BTN4.removeAttribute('disabled', '')
+  PAG_BTN5.removeAttribute('disabled', '')
   PAG_CIRC3.classList.add('pag_active')
   PAG_CIRC1.classList.remove('pag_active')
   PAG_CIRC2.classList.remove('pag_active')
@@ -49,6 +65,11 @@ PAG_BTN3.addEventListener('click', () => {
 
 PAG_BTN4.addEventListener('click', () => {
   //CAROUSEL.classList.add('transition-right')//
+  PAG_BTN4.setAttribute('disabled', '')
+  PAG_BTN2.removeAttribute('disabled', '')
+  PAG_BTN3.removeAttribute('disabled', '')
+  PAG_BTN1.removeAttribute('disabled', '')
+  PAG_BTN5.removeAttribute('disabled', '')
   PAG_CIRC4.classList.add('pag_active')
   PAG_CIRC1.classList.remove('pag_active')
   PAG_CIRC2.classList.remove('pag_active')
@@ -59,6 +80,11 @@ PAG_BTN4.addEventListener('click', () => {
 
 PAG_BTN5.addEventListener('click', () => {
   //CAROUSEL.classList.add('transition-right')//
+  PAG_BTN5.setAttribute('disabled', '')
+  PAG_BTN2.removeAttribute('disabled', '')
+  PAG_BTN3.removeAttribute('disabled', '')
+  PAG_BTN4.removeAttribute('disabled', '')
+  PAG_BTN1.removeAttribute('disabled', '')
   PAG_CIRC5.classList.add('pag_active')
   PAG_CIRC1.classList.remove('pag_active')
   PAG_CIRC2.classList.remove('pag_active')
@@ -67,12 +93,15 @@ PAG_BTN5.addEventListener('click', () => {
   CAROUSEL.style.cssText = 'transform: translateX(-80.3%)'
 });
 
+BTN_LEFT.addEventListener('click', leftSlide);
+BTN_RIGHT.addEventListener('click', rightSlide);
+
+
+
 document.addEventListener("DOMContentLoaded", function(){
   document.getElementById("burger").addEventListener("click",function()
   {
     document.querySelector(".header").classList.toggle("open")
   })
 })
-
-
 

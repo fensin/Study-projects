@@ -637,8 +637,8 @@ main {
 .about__carousel {
   display: flex;
   justify-content: center;
-  gap: 25px;
   width: 100%;
+  position: relative;
 }
 
 .carret {
@@ -646,21 +646,34 @@ main {
   cursor: pointer;
   border: none;
   display: none;
+  padding-top: 46px;
+}
+
+.carret svg {
+  transition: scale 0.2s;
+}
+
+.carret:hover svg {
+  scale: 1.5;
+  transition: scale 0.2s;
+}
+
+.carret:active svg {
+  transform: scale(0.8);
 }
 
 ._left {
-  margin: 43px 45px 0 auto;
-  padding-left: 50px;
+  padding-left: 77px;
 }
 
 ._right {
-  margin: 43px auto 0 45px;
-  padding-right: 50px;
+  padding-right: 77px;
 }
 
 .about__images {
   height: 100%;
   width: 100%;
+  user-select: none;
 }
 
 .carousel__images {
@@ -673,7 +686,7 @@ main {
 
 .carousel__images-item {
   display: flex;
-
+  justify-content: center;
 }
 
 .carousel {
@@ -723,6 +736,8 @@ main {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 .carousel__button:last-child {
@@ -747,6 +762,10 @@ main {
 
 .carousel__button:active {
   opacity: 0.8;
+}
+
+.carousel__button:disabled {
+  opacity: 1;
 }
 
 .pag_active {
@@ -1604,7 +1623,7 @@ footer {
   }
 
   .about__images {
-    width: 100%;
+    max-width: 450px;
   }
 
   .about__images:nth-child(2){
