@@ -634,13 +634,14 @@ main {
   padding: 0 20px 20px 20px;
 }
 
-.about__content-images {
+.about__carousel {
   display: flex;
   justify-content: center;
+  gap: 25px;
   width: 100%;
 }
 
-.about__carret {
+.carret {
   background-color: transparent;
   cursor: pointer;
   border: none;
@@ -657,15 +658,22 @@ main {
   padding-right: 50px;
 }
 
-.about__covers {
-  display: flex;
-  justify-content: center;
+.about__images {
+  height: 100%;
+  width: 100%;
 }
 
-.about__images {
-  margin: 0 12.5px;
-  max-width: 450px;
-  width: 33%;
+.carousel__images {
+  display: flex;
+  gap: 25px;
+  position: relative;
+  width: 165.9722216%;
+  transition: transform 1s;
+}
+
+.carousel__images-item {
+  display: flex;
+
 }
 
 .carousel {
@@ -673,9 +681,44 @@ main {
   padding: 35px 0;
 }
 
+.carousel__wrapper {
+  position: relative;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+/*@keyframes move-right {
+  from {left: 0px;}
+  to {left: -450px;}
+}
+
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 2s;
+}
+
+@keyframes move-left {
+  from {left: 450px;}
+  to {left: 0px;}
+}
+
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 2s;
+}*/
+
+.transition-left {
+  transform: translateX(0);
+  transition: transform 2s;
+}
+
+.transition-right {
+  transform: translateX(-20.3%);
+  transition: transform 2s;
+}
+
 .carousel__button {
-  width: 26px;
-  height: 26px;
+  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -691,19 +734,22 @@ main {
 }
 
 .carousel__circle {
-  background-color: black;
+  background-color: var(--main-black);  
   width: 16px;
   height: 16px;
   border-radius: 16px;
   text-align: center;
 }
 
-.carousel__circle_active {
-  background-color: black;
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  text-align: center;
+.carousel__button:hover {
+  opacity: 0.6;
+}
+
+.carousel__button:active {
+  opacity: 0.8;
+}
+
+.pag_active {
   background-color: var(--light-brown);
 }
 
@@ -1290,7 +1336,7 @@ input:checked ~ .radio-text {
   display: none;
 }
 
-.active {
+.card_active {
   opacity: 1;
   visibility: visible;
   display: flex;
@@ -1545,9 +1591,17 @@ footer {
     margin: 0;
   }
 
-.about__carret {
+  .carousel__images {
+    width: 500%;
+  }
+
+  .carousel__images-item {
+    width: 20%;
+  }
+
+  .carret {
   display: block;
-}
+  }
 
   .about__images {
     width: 100%;
