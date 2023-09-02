@@ -662,6 +662,18 @@ main {
   transform: scale(0.8);
 }
 
+.carret.btnInactive {
+  cursor: default;
+}
+
+.btnInactive:hover svg {
+  scale: 1;
+}
+
+.btnInactive:active svg {
+  scale: 1;
+}
+
 ._left {
   padding-left: 77px;
 }
@@ -768,7 +780,7 @@ main {
   opacity: 1;
 }
 
-.pag_active {
+.carousel__button.pag_active .carousel__circle{
   background-color: var(--light-brown);
 }
 
@@ -1749,4 +1761,26 @@ footer {
 
 .split-input input {
   width: 45px;
+}
+
+@keyframes next1 {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes next2 {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%; 
+  }
+}
+
+.carousel__images div {
+  position: relative;
 }
