@@ -177,55 +177,26 @@
                   Pick favorites of season
                 </h3>
               </div>
-              <div class="season-pick__choose">
-                <div class="season-pick__container">
-                  <label class="radio-label" id="winter">
-                    <input
-                      class="radio-button"
-                      type="radio"
-                      checked
-                      name="season-pick__radio"
-                      value="winter"
-                    >
-                    <span class="custom-radio"></span>
-                    <span class="radio-text">Winter</span>
-                  </label>
+              <div class="favorites-content__radio-container">
+                <div class="radio-container">
+                  <input class="radioInput" checked id="winter" type="radio" name="season-pick__radio">
+                  <span class="fakeRadio"></span>
+                  <label data-text="Winter" class="radioLabel" for="winter">Winter</label>
                 </div>
-                <div class="season-pick__container">
-                  <label class="radio-label" id="spring">
-                    <input
-                      class="radio-button"
-                      type="radio"
-                      name="season-pick__radio"
-                      value="spring"
-                    >
-                    <span class="custom-radio"></span>
-                    <span class="radio-text">Spring</span>
-                  </label>
+                <div class="radio-container">
+                  <input class="radioInput" id="spring" type="radio" name="season-pick__radio">
+                  <span class="fakeRadio"></span>
+                  <label data-text="Spring" class="radioLabel" for="spring">Spring</label>
                 </div>
-                <div class="season-pick__container">
-                  <label class="radio-label" id="summer">
-                    <input
-                      class="radio-button"
-                      type="radio"
-                      name="season-pick__radio"
-                      value="summer"
-                    >
-                    <span class="custom-radio"></span>
-                    <span class="radio-text">Summer</span>
-                  </label>
+                <div class="radio-container" >
+                  <input class="radioInput" id="summer" type="radio" name="season-pick__radio">
+                  <span class="fakeRadio"></span>
+                  <label data-text="Summer" class="radioLabel" for="summer">Summer</label>
                 </div>
-                <div class="season-pick__container">
-                  <label class="radio-label" id="autumn">
-                    <input
-                      class="radio-button"
-                      type="radio"
-                      name="season-pick__radio"
-                      value="autumn"
-                    >
-                    <span class="custom-radio"></span>
-                    <span class="radio-text">Autumn</span>
-                  </label>
+                <div class="radio-container">
+                  <input class="radioInput" id="autumn" type="radio" name="season-pick__radio">
+                  <span class="fakeRadio"></span>
+                  <label data-text="Autumn" class="radioLabel" for="autumn">Autumn</label>
                 </div>
               </div>
             </div>
@@ -1225,5 +1196,6 @@
     <script src="slider.js"></script>
     <script src="main.js"></script>
     <script src="index.js"></script>
+    <script src="season.js"></script>
   </body>
 </html>

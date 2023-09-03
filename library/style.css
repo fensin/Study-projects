@@ -803,6 +803,88 @@ main {
   padding: 0 0 35px 20px;
 }
 
+.favorites-content__radio-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 0;
+  margin-left: 15px;
+  user-select: none;
+}
+
+.radio-container {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 85px;
+}
+
+.radio-container:last-child {
+  margin-right: 0;
+}
+
+.radioInput {
+  width: 0;
+  height: 0;
+  display: none;
+  opacity: 0;
+  position: absolute;
+}
+
+.radioInput:checked + .fakeRadio::before {
+  opacity: 1;
+}
+
+.fakeRadio {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid #000;
+  vertical-align: middle;
+  position: relative;
+}
+
+.fakeRadio::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: var(--main-black);
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.radioLabel {
+  padding-left: 15px;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.radioLabel::after {
+  content: attr(data-text);
+  font-weight: 700;
+  height: 0;
+  overflow: hidden; 
+  visibility: hidden;
+}
+
+.radioInput:checked ~ .radioLabel {
+  font-weight: 700;
+}
+
 .season-pick__choose {
   display: flex;
   padding-left: 15px;
@@ -1686,6 +1768,17 @@ footer {
   }
 }
 
+@media screen and (max-width: 740px) {
+  .radio-container:first-child,
+  .radio-container:nth-child(2) {
+    margin-right: 150px;
+  }
+
+  .radio-container:nth-child(3) {
+    margin-right: 134px; 
+  }
+}
+
 .modalBuyCard {
   background-color: #fff;
   width: 650px;
@@ -1761,24 +1854,6 @@ footer {
 
 .split-input input {
   width: 45px;
-}
-
-@keyframes next1 {
-  from {
-    left: 0%;
-  }
-  to {
-    left: -100%;
-  }
-}
-
-@keyframes next2 {
-  from {
-    left: 100%;
-  }
-  to {
-    left: 0%; 
-  }
 }
 
 .carousel__images div {
