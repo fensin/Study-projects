@@ -27,18 +27,21 @@ html {
   position: relative;
 }
 
-.substrate {
+.burger_back {
+  z-index: -5;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  position: absolute;
-  background-color: #000;
-  opacity: 0.7;
-  z-index: -5;
+  background-color: transparent;
+  transition: opacity .3s, visibility .3s;
 }
 
-.substrate.active {
-  opacity: 0.7;
+.burger_back.active {
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 5;
+  transition: opacity .3s, visibility .3s;
 }
 
 header {
@@ -124,8 +127,7 @@ header {
   transition: transform 0.3s 0s ease-in-out, opacity 0.2s 0s ease-in-out, visibility 0s 0.2s;
 }
 
-.ModalProfile_auth.auth,
-.ModalProfile_noAuth.noAuth {
+.profActive {
   transform: translateY(25%);
   opacity: 1;
   visibility: visible;
@@ -160,10 +162,36 @@ header {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 
 .ModalProfile__link:last-child {
   margin-top: 10px;
+}
+
+.modal_hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+
+.modal__wrapper {
+  z-index: 7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity .3s, visibility .3s;
+}
+
+.modalWindow__wrapper {
+  display: none;
+  z-index: 8;
 }
 
 .modal {
@@ -171,6 +199,25 @@ header {
   position: relative;
   padding: 20px 25px;
   width: 250px;
+  z-index: 8;
+}
+
+.log {
+  height: 262px;
+  display: none;
+}
+
+.reg {
+  height: 382px;
+  display: none;
+}
+
+.log.active {
+  display: block;
+}
+
+.reg.active {
+  display: block;
 }
 
 .modal__cross {
@@ -486,6 +533,9 @@ header {
 .modalBuyCard {
   display: flex;
   flex-direction: column;
+  background-color: #fff;
+  width: 640px;
+  height: 540px;
 }
 
 .modalBuyCard .LogReg__input:nth-child(4){
@@ -1682,12 +1732,6 @@ footer {
   .radioFav:nth-child(3) {
     margin-right: 134px; 
   }
-}
-
-.modalBuyCard {
-  background-color: #fff;
-  width: 640px;
-  height: 540px;
 }
 
 .modalBuyCard__head {

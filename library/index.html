@@ -28,8 +28,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header" id="heade">
-        <div class="substrate"></div>
+      <header class="header">
         <div class="header__container">
           <h1 class="page-title">Brooklyn Public Library</h1>
           <nav class="header__navigation" id="header__navigation">
@@ -60,8 +59,8 @@
             <div class="ModalProfile_noAuth">
               <h3 class="ModalProfile__head">Profile</h3>
               <div class="ModalProfile__line"></div>
-              <button class="ModalProfile__link">Log In</button>
-              <button class="ModalProfile__link">Register</button>
+              <button class="ModalProfile__link" id="logIn">Log In</button>
+              <button class="ModalProfile__link" id="register">Register</button>
             </div>
             <div class="ModalProfile_auth">
               <h3 class="ModalProfile__head">Profile</h3>
@@ -1001,197 +1000,205 @@
         </footer>
       </div>
     </div>
-    <div class="modal">
-      <h3 class="modal__title">Login</h3>
-      <div class="modal__cross">
-        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-          <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
-          <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
-        </svg>
-      </div>
-      <form class="modal__form">
-        <div class="modal__form-item">
-          <label class="modal__form-label" for="emailCard">E-mail or readers card</label>
-          <input id="emailCard" class="modal__form-input" type="text" required>
-        </div>
-        <div class="modal__form-item">
-          <label class="modal__form-label" for="password">Password</label>
-          <input id="password" class="modal__form-input" type="password" minlength="8" required>
-        </div>
-        <div class="modal__form-submit">
-          <button class="modalButton">Sign Up</button>
-        </div>
-      </form>
-      <div class="modal__textBox">
-        <span class="modal__text">Don’t have an account?</span>
-        <button class="modal__link">Register</button>
-      </div>
-    </div>
-    <div class="modal">
-      <h3 class="modal__title">Register</h3>
-      <div class="modal__cross">
-        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-          <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
-          <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
-        </svg>
-      </div>
-      <form class="modal__form">
-        <div class="modal__form-item">
-          <label class="modal__form-label" for="firstName">First name</label>
-          <input id="firstName" class="modal__form-input" type="text" required>
-        </div>
-        <div class="modal__form-item">
-          <label class="modal__form-label" for="lastName">Last name</label>
-          <input id="lastName" class="modal__form-input" type="text" required>
-        </div>
-        <div class="modal__form-item">
-          <label class="modal__form-label" for="emailCard">E-mail or readers card</label>
-          <input id="emailCard" class="modal__form-input" type="text" required>
-        </div>
-        <div class="modal__form-item">
-          <label class="modal__form-label" for="password">Password</label>
-          <input id="password" class="modal__form-input" type="password" minlength="8" required>
-        </div>
-        <div class="modal__form-submit">
-          <button class="modalButton">Sign Up</button>
-        </div>
-      </form>
-      <div class="modal__textBox">
-        <span class="modal__text">Don’t have an account?</span>
-        <button class="modal__link">Register</button>
-      </div>
-    </div>
-    <div class="ModalMyProf">
-      <div class="ModalMyProf__black">
-        <div class="ModalMyProf__pic">
-          <h5 class="ModalMyProf__pic-text">JD</h5>
-        </div>
-        <div class="ModalMyProf__name">
-          <p class="ModalMyProf__name-text">
-            John Doe
-          </p>
-        </div>
-      </div>
-      <div class="ModalMyProf__white">
-        <h3 class="ModalMyProf__title">My profile</h3>
-        <div class="ModalMyProf__cross">
+    <div class="modal__wrapper modal_hidden" id="modalWrap">
+      <div class="modal log">
+        <h3 class="modal__title">Login</h3>
+        <div class="modal__cross">
           <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
             <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
             <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
           </svg>
         </div>
-        <div class="ModalMyProf__counters">
-          <div class="counter">
-            <h6 class="counter__title">Visits</h6>
-            <div class="counter__icon">
-              <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76142 15.5 5C15.5 2.23858 13.2614 0 10.5 0C7.73858 0 5.5 2.23858 5.5 5C5.5 7.76142 7.73858 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5L0.5 21C0.5 18.3478 1.55357 15.8043 3.42893 13.9289C5.3043 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
-              </svg>
-            </div>
-            <p class="counter__num">
-              23
-            </p>
-          </div>
-          <div class="counter">
-            <h6 class="counter__title">Bonuses</h6>
-            <div class="counter__icon">
-              <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="Star 1" d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
-              </svg>
-            </div>
-            <p class="counter__num">
-              1240
-            </p>
-          </div>
-          <div class="counter">
-            <h6 class="counter__title">Books</h6>
-            <div class="counter__icon">
-              <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="book">
-                  <rect id="Rectangle 32" width="20" height="21" fill="#BB945F"/>
-                  <rect id="Rectangle 33" x="2" width="1" height="19" fill="#826844"/>
-                  <rect id="Rectangle 35" x="1" width="1" height="21" fill="white"/>
-                </g>
-              </svg>
-            </div>
-            <p class="counter__num">
-              VAR
-            </p>
-          </div>
-        </div>
-        <h6 class="ModalMyProf__rented">Rented books</h6>
-        <ul class="ModalMyProf__rented-list">
-          <li>The Last Queen, Clive Irving</li>
-          <li>Dominicana, Angie Cruz</li>
-        </ul>
-        <div class="ModalMyProf__card">
-          <h6 class="card-title">Card number</h6>
-          <h6 class="card-num">F00234030</h6>
-          <div class="copy-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
-              <rect x="2.46826" y="0.25" width="10.5917" height="9.5" rx="0.75" stroke="black" stroke-width="0.5"/>
-              <rect x="0.25" y="2.25" width="10.5917" height="9.5" rx="0.75" fill="white" stroke="black" stroke-width="0.5"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modalBuyCard">
-      <div class="modalBuyCard__head">
-        <h3 class="modalBuyCard__title">Buy a library card</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-          <path d="M2 16.8507L17 2" stroke="white" stroke-width="3"/>
-          <path d="M2 2.14929L17 17" stroke="white" stroke-width="3"/>
-        </svg>
-      </div>
-      <div class="modalBuyCard__content">
         <form class="modal__form">
           <div class="modal__form-item">
-            <label class="modal__form-label" for="bankNum">Bank number</label>
-            <input id="bankNum" class="modal__form-input" required>
+            <label class="modal__form-label" for="emailCard">E-mail or readers card</label>
+            <input id="emailCard" class="modal__form-input" type="text" required>
           </div>
           <div class="modal__form-item">
-            <label class="modal__form-label" for="expCode">Expiration code</label>
-            <div class="split-input">
-              <input id="expCode" class="modal__form-input" required>
-              <input id="expCode" class="modal__form-input" required>
-            </div>
-          </div>
-          <div class="modal__form-item">
-            <label class="modal__form-label" for="expCode">CVC</label>
-            <div class="split-input">
-              <input id="expCode" class="modal__form-input" required>
-            </div>
-          </div>
-          <div class="modal__form-item">
-            <label class="modal__form-label" for="bankNum">Bank number</label>
-            <input id="bankNum" class="modal__form-input" required>
-          </div>
-          <div class="modal__form-item">
-            <label class="modal__form-label" for="bankNum">Bank number</label>
-            <input id="bankNum" class="modal__form-input" required>
-          </div>
-          <div class="modal__form-item">
-            <label class="modal__form-label" for="bankNum">Bank number</label>
-            <input id="bankNum" class="modal__form-input" required>
+            <label class="modal__form-label" for="password">Password</label>
+            <input id="password" class="modal__form-input" type="password" minlength="8" required>
           </div>
           <div class="modal__form-submit">
             <button class="modalButton">Sign Up</button>
-            <h6>$ 25.00</h6>
           </div>
         </form>
-        <div class="modalBuyCard__text">
-          <p>
-            If you are live, work, attend school,
-            or pay property taxes in New York State,
-            you can get a $25 digital library card
-            right now using this online form.
-            Visitors to New York State can also use
-            this form to apply for a temporary card.
-          </p>
+        <div class="modal__textBox">
+          <span class="modal__text">Don’t have an account?</span>
+          <button class="modal__link" id="lnkReg">Register</button>
+        </div>
+      </div>
+      <div class="modal reg">
+        <h3 class="modal__title">Register</h3>
+        <div class="modal__cross">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+            <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+          </svg>
+        </div>
+        <form class="modal__form">
+          <div class="modal__form-item">
+            <label class="modal__form-label" for="firstName">First name</label>
+            <input id="firstName" class="modal__form-input" type="text" required>
+          </div>
+          <div class="modal__form-item">
+            <label class="modal__form-label" for="lastName">Last name</label>
+            <input id="lastName" class="modal__form-input" type="text" required>
+          </div>
+          <div class="modal__form-item">
+            <label class="modal__form-label" for="emailCard">E-mail or readers card</label>
+            <input id="emailCard" class="modal__form-input" type="text" required>
+          </div>
+          <div class="modal__form-item">
+            <label class="modal__form-label" for="password">Password</label>
+            <input id="password" class="modal__form-input" type="password" minlength="8" required>
+          </div>
+          <div class="modal__form-submit">
+            <button class="modalButton">Sign Up</button>
+          </div>
+        </form>
+        <div class="modal__textBox">
+          <span class="modal__text">Already have an account?</span>
+          <button class="modal__link" id="lnkLog">Login</button>
+        </div>
+      </div>
+      <div class="modalWindow__wrapper">
+        <div class="ModalMyProf">
+          <div class="ModalMyProf__black">
+            <div class="ModalMyProf__pic">
+              <h5 class="ModalMyProf__pic-text">JD</h5>
+            </div>
+            <div class="ModalMyProf__name">
+              <p class="ModalMyProf__name-text">
+                John Doe
+              </p>
+            </div>
+          </div>
+          <div class="ModalMyProf__white">
+            <h3 class="ModalMyProf__title">My profile</h3>
+            <div class="ModalMyProf__cross">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+              </svg>
+            </div>
+            <div class="ModalMyProf__counters">
+              <div class="counter">
+                <h6 class="counter__title">Visits</h6>
+                <div class="counter__icon">
+                  <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76142 15.5 5C15.5 2.23858 13.2614 0 10.5 0C7.73858 0 5.5 2.23858 5.5 5C5.5 7.76142 7.73858 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5L0.5 21C0.5 18.3478 1.55357 15.8043 3.42893 13.9289C5.3043 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
+                  </svg>
+                </div>
+                <p class="counter__num">
+                  23
+                </p>
+              </div>
+              <div class="counter">
+                <h6 class="counter__title">Bonuses</h6>
+                <div class="counter__icon">
+                  <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Star 1" d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
+                  </svg>
+                </div>
+                <p class="counter__num">
+                  1240
+                </p>
+              </div>
+              <div class="counter">
+                <h6 class="counter__title">Books</h6>
+                <div class="counter__icon">
+                  <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="book">
+                      <rect id="Rectangle 32" width="20" height="21" fill="#BB945F"/>
+                      <rect id="Rectangle 33" x="2" width="1" height="19" fill="#826844"/>
+                      <rect id="Rectangle 35" x="1" width="1" height="21" fill="white"/>
+                    </g>
+                  </svg>
+                </div>
+                <p class="counter__num">
+                  VAR
+                </p>
+              </div>
+            </div>
+            <h6 class="ModalMyProf__rented">Rented books</h6>
+            <ul class="ModalMyProf__rented-list">
+              <li>The Last Queen, Clive Irving</li>
+              <li>Dominicana, Angie Cruz</li>
+            </ul>
+            <div class="ModalMyProf__card">
+              <h6 class="card-title">Card number</h6>
+              <h6 class="card-num">F00234030</h6>
+              <div class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
+                  <rect x="2.46826" y="0.25" width="10.5917" height="9.5" rx="0.75" stroke="black" stroke-width="0.5"/>
+                  <rect x="0.25" y="2.25" width="10.5917" height="9.5" rx="0.75" fill="white" stroke="black" stroke-width="0.5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modalWindow__wrapper">
+        <div class="modalBuyCard">
+          <div class="modalBuyCard__head">
+            <h3 class="modalBuyCard__title">Buy a library card</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+              <path d="M2 16.8507L17 2" stroke="white" stroke-width="3"/>
+              <path d="M2 2.14929L17 17" stroke="white" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="modalBuyCard__content">
+            <form class="modal__form">
+              <div class="modal__form-item">
+                <label class="modal__form-label" for="bankNum">Bank number</label>
+                <input id="bankNum" class="modal__form-input" required>
+              </div>
+              <div class="modal__form-item">
+                <label class="modal__form-label" for="expCode">Expiration code</label>
+                <div class="split-input">
+                  <input id="expCode" class="modal__form-input" required>
+                  <input id="expCode" class="modal__form-input" required>
+                </div>
+              </div>
+              <div class="modal__form-item">
+                <label class="modal__form-label" for="expCode">CVC</label>
+                <div class="split-input">
+                  <input id="expCode" class="modal__form-input" required>
+                </div>
+              </div>
+              <div class="modal__form-item">
+                <label class="modal__form-label" for="bankNum">Bank number</label>
+                <input id="bankNum" class="modal__form-input" required>
+              </div>
+              <div class="modal__form-item">
+                <label class="modal__form-label" for="bankNum">Bank number</label>
+                <input id="bankNum" class="modal__form-input" required>
+              </div>
+              <div class="modal__form-item">
+                <label class="modal__form-label" for="bankNum">Bank number</label>
+                <input id="bankNum" class="modal__form-input" required>
+              </div>
+              <div class="modal__form-submit">
+                <button class="modalButton">Sign Up</button>
+                <h6>$ 25.00</h6>
+              </div>
+            </form>
+            <div class="modalBuyCard__text">
+              <p>
+                If you are live, work, attend school,
+                or pay property taxes in New York State,
+                you can get a $25 digital library card
+                right now using this online form.
+                Visitors to New York State can also use
+                this form to apply for a temporary card.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <div class="burger_back"></div>
+
 
     <script src="slider.js"></script>
     <script src="main.js"></script>
