@@ -1,15 +1,17 @@
 const icon = document.querySelector('.header__profile-icon');
 const burger = document.querySelector('#burger');
-const modalProfile = document.querySelector('.ModalProfile_noAuth');
+const modalProfileNoAuth = document.querySelector('.ModalProfile_noAuth');
+const modalProfileAuth = document.querySelector('.ModalProfile_auth');
 const header = document.querySelector('.header');
 const burgerBack = document.querySelector('.burger_back');
 const burgerItem = document.querySelectorAll('.navigation-item');
 const burgerMenu = document.querySelector('.header__navigation');
+const body = document.querySelector('body');
 
 //Burger menu open and close function
 function burgerToggle() {
   header.classList.toggle('open');
-  modalProfile.classList.remove('profActive');
+  modalProfileNoAuth.classList.remove('profActive');
   backActivate();
 } 
 
@@ -30,12 +32,23 @@ burgerItem.forEach (function (item) {
 
 //Click on profile icon
 function profileToggle () {
-  modalProfile.classList.toggle('profActive');
+  modalProfileNoAuth.classList.toggle('profActive');
   header.classList.remove('open');
   burgerBack.classList.remove('active');
 }
 
-icon.addEventListener('click', profileToggle)
+function profileBack (e) {
+  const isProfileClick = e.composedPath().includes(modalProfileNoAuth);
+  const isIconClick = e.composedPath().includes(icon);
+  console.log(isProfileClick)
+  console.log(isIconClick)
+  if (isProfileClick == false && isIconClick == false) {
+    modalProfileNoAuth.classList.remove('profActive');
+  }
+}
+
+icon.addEventListener('click', profileToggle);
+body.addEventListener('click', profileBack);
 
 //LogIn modal
 const btnLogIn = document.querySelector('#logIn');

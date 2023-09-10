@@ -1035,25 +1035,25 @@
             <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
           </svg>
         </div>
-        <form class="modal__form">
+        <form class="modal__form" id="formReg">
           <div class="modal__form-item">
             <label class="modal__form-label" for="firstName">First name</label>
-            <input id="firstName" class="modal__form-input" type="text" required>
+            <input id="firstName" name="First Name" class="modal__form-input" type="text">
           </div>
           <div class="modal__form-item">
             <label class="modal__form-label" for="lastName">Last name</label>
-            <input id="lastName" class="modal__form-input" type="text" required>
+            <input id="lastName" name="Last Name" class="modal__form-input" type="text">
           </div>
           <div class="modal__form-item">
             <label class="modal__form-label" for="emailCard">E-mail or readers card</label>
-            <input id="emailCard" class="modal__form-input" type="text" required>
+            <input id="emailCard" name="E-mail" class="modal__form-input" type="text">
           </div>
           <div class="modal__form-item">
             <label class="modal__form-label" for="password">Password</label>
-            <input id="password" class="modal__form-input" type="password" minlength="8" required>
+            <input id="password" name="Password" class="modal__form-input" type="password">
           </div>
           <div class="modal__form-submit">
-            <button class="modalButton">Sign Up</button>
+            <button type="submit" class="modalButton">Sign Up</button>
           </div>
         </form>
         <div class="modal__textBox">
@@ -1199,7 +1199,7 @@
     </div>
     <div class="burger_back"></div>
 
-
+    <script src="storage.js"></script>
     <script src="slider.js"></script>
     <script src="main.js"></script>
     <script src="index.js"></script>
