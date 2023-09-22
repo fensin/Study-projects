@@ -46,7 +46,7 @@ body {
 
 .player-container {
   min-width: 400px; 
-  height: 65vh;
+  height: 85vh;
   border-radius: 10px;
   background-color: #2C201B;
   overflow: hidden;
@@ -76,11 +76,18 @@ body {
   margin-left: 20px;
   color: #CECECA;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin: 20px 20px;
+  margin: 20px 15px;
 }
 
 .band {
   font-size: small;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  color: #CECECA;
+  margin: 0 5px;
 }
 
 .control__buttons {
@@ -92,9 +99,11 @@ body {
 }
 
 .track {
-  width: 100%;
+  width: 95%;
   accent-color: #CECECA;
   border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .btn {
