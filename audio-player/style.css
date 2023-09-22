@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+}
+
 .back {
   background-color: black;
   width: 100vw;
@@ -33,7 +37,7 @@
   opacity: 1;
 }
 
-main {
+.wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,8 +45,8 @@ main {
 }
 
 .player-container {
-  width: 500px;
-  height: 700px;
+  min-width: 400px; 
+  height: 65vh;
   border-radius: 10px;
   background-color: #2C201B;
   overflow: hidden;
@@ -54,17 +58,109 @@ main {
   width: 100%;
   height: 60%;
   border-radius: 10px;
+  user-select: none;
 }
 
 .player-container__cover img {
   width: 100%;
   height: 100%;
-
 }
 
 .player-container__control {
   background-color: #2C201B;
   width: 100%;
-  height: 40%;
   border-radius: 10px;
+}
+
+.player__title {
+  margin-left: 20px;
+  color: #CECECA;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 20px 20px;
+}
+
+.band {
+  font-size: small;
+}
+
+.control__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; 
+  margin-top: 20px;
+}
+
+.track {
+  width: 100%;
+  accent-color: #CECECA;
+  border-radius: 20px;
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 2px #CECECA solid;
+  cursor: pointer;
+  transition: box-shadow .2s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 5px 5px #CECECA;
+}
+
+.btn:active {
+  scale: 0.95;
+}
+
+.btn.prev {
+  background: url(/audio-player/assets/icons/Previous.svg) center no-repeat;
+}
+
+.btn.play {
+  width: 70px;
+  height: 70px;
+  background: url(/audio-player/assets/icons/Play.svg) center no-repeat;
+}
+
+.btn.pause {
+  width: 70px;
+  height: 70px;
+  background: url(/audio-player/assets/icons/Pause.svg) center no-repeat;
+}
+
+.btn.next {
+  background: url(/audio-player/assets/icons/Next.svg) center no-repeat;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 70px;
+  background-color: #CECECA;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 10px 0 0;
+  margin-right: 20px;
+}
+
+footer > * {
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.git img{
+  width: 60%;
+  height: 60%;
+}
+
+.school img {
+  height: 90%;
+  width: 90%;
 }
