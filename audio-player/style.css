@@ -6,35 +6,11 @@
 
 body {
   position: relative;
-}
-
-.back {
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  position: absolute;
-}
-
-.back img {
-  object-fit: cover;
-  object-position: center;
-  visibility: hidden;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  filter: blur(10px);
-  position: absolute;
-  top: 0;
-  transition: opacity 1s, visibility 1s;
-}
-
-.back.cure img:first-child,
-.back.florence img:nth-child(2),
-.back.tears img:last-child
- {
-  visibility: visible;
-  opacity: 1;
+  background-image: url(/audio-player/assets/images/Cure.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(15px);
 }
 
 .wrapper {
