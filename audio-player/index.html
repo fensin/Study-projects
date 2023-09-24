@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="player-container">
+			<div class="player-container__cover"></div>
+			<audio id="audio" src="assets/music/The Cure - Lovesong.mp3"></audio>
+			<div class="player-container__control">
+				<div class="player__title">
+					<h2 class="song">Lovesong</h2>
+					<h2 class="band">The Cure</h2>
+				</div>
+				<input type="range" class="track" min="0" max="100" value="0">
+				<div class="time">
+					<h5 class="current">0:00</h5>
+					<h5 class="full">3:28</h5>
+				</div>
+				<div class="control__buttons">
+					<button class="btn prev" id="prev"></button>
+					<button class="btn play" id="playPause"></button>
+					<button class="btn next" id="next"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<a href="https://github.com/fensin" target="_blank" class="git">
+			<img src="/audio-player/assets/icons/github-mark-white.svg" alt="">
+		</a>
+		<h4>2023</h4>
+		<a href="https://rs.school/js-stage0/" target="_blank" class="school">
+			<img src="/audio-player/assets/icons/rs_school_js.svg" alt="">
+		</a>
+	</footer>
+	<script src="script.js"></script>
+</body> 
+</html>
