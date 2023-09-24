@@ -44,10 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentMin = 0;
   let currentSec = 0;
 
-  let currTime = 0;
-
-  function playAudio()  {
-    audio.src = songs[playNum].src;
+  function playAudio() {
     audio.play();
   }
 
@@ -72,6 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Update song
   function updateSong() {
+    audio.src = songs[playNum].src;
+    
     coverBack.style.backgroundImage = `url('${songs[playNum].background}')`;
     coverAlbum.style.backgroundImage = `url('${songs[playNum].cover}')`;
 
@@ -124,8 +123,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     currentMin = parseInt(audio.currentTime / 60);
     currentSec = parseInt(audio.currentTime % 60);
-    
-    timeCurrent.textContent = `${currentMin.toString()}:${currentSec.toString()}`;
+
+    if (currentSec < 10) {
+      timeCurrent.textContent = `${currentMin.toString()}:0${currentSec.toString()}`;
+    } else {
+      timeCurrent.textContent = `${currentMin.toString()}:${currentSec.toString()}`;
+    }
   }
 
   audio.addEventListener('timeupdate', updateTime);
