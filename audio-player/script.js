@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {
       band: 'Tears For Fears',
       song: 'Everybody Wants To Rule The World',
-      src: 'assets/music/Tears For Fears- Everybody Wants To Rule The World.mp3',
+      src: 'assets/music/Tears For Fears - Everybody Wants To Rule The World.mp3',
       cover: 'assets/images/TearsCover.jpg',
       background: 'assets/images/Tears.jpg',
       duration: '4:11',
@@ -35,9 +35,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const btnNext = document.querySelector('#next');
   const nameSong = document.querySelector('.song');
   const nameBand = document.querySelector('.band');
+  const timeFull = document.querySelector('.full');
+  const timeCurrent = document.querySelector('.current');
+  const track = document.querySelector('.track');
 
   let isPlay = false;
   let playNum = 0;
+  let currTime = 0;
 
   function playAudio()  {
     audio.src = songs[playNum].src;
@@ -62,18 +66,29 @@ document.addEventListener('DOMContentLoaded', function() {
     } 
   })
 
+
+  //Update song
+  function updateSong() {
+    coverBack.style.backgroundImage = `url('${songs[playNum].background}')`;
+    coverAlbum.style.backgroundImage = `url('${songs[playNum].cover}')`;
+
+    nameSong.textContent = songs[playNum].song;
+    nameBand.textContent = songs[playNum].band;
+
+    timeFull.textContent = songs[playNum].duration;
+  }
+
   //Next song
   function next() {
     playNum++;
     if (playNum >= songs.length) {
       playNum = 0;
     }
-    coverBack.style.backgroundImage = `url('${songs[playNum].background}')`;
-    coverAlbum.style.backgroundImage = `url('${songs[playNum].cover}')`;
+    updateSong();
 
-    //Song name and band
-    nameSong.textContent = songs[playNum].song;
-    nameBand.textContent = songs[playNum].band;
+    if (isPlay) {
+      playAudio();
+    }
   }
 
   btnNext.addEventListener('click', next);
@@ -84,15 +99,38 @@ document.addEventListener('DOMContentLoaded', function() {
     if (playNum < 0) {
       playNum = 2;
     }
-    coverBack.style.backgroundImage = `url('${songs[playNum].background}')`;
-    coverAlbum.style.backgroundImage = `url('${songs[playNum].cover}')`;
+    updateSong();
 
-    //Song name and band
-    nameSong.textContent = songs[playNum].song;
-    nameBand.textContent = songs[playNum].band;
+    if (isPlay) {
+      playAudio();
+    }
   }
 
   btnPrev.addEventListener('click', prev);
 
-  
+  //Next song when ends
+  audio.addEventListener('ended', () => {
+    next();
+  })
+
+  //Time bar
+  function updateTime (e) {
+    const {duration, currentTime} = e.srcElement;
+    const timePercent = (currentTime / duration) * 100;
+    track.value = timePercent;
+    timeCurrent.textContent = parseInt(audio.currentTime);
+  }
+
+  audio.addEventListener('timeupdate', updateTime);
+
+  //Change time with bar
+  function changeTime (e) {
+    const width = this.clientWidth;
+    const click = e.offsetX;
+    const duration = audio.duration;
+
+    audio.currentTime = (click / width) * duration;
+  }
+
+  track.addEventListener('click', changeTime)
 })
