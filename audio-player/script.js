@@ -41,6 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let isPlay = false;
   let playNum = 0;
+  let currentMin = 0;
+  let currentSec = 0;
+
   let currTime = 0;
 
   function playAudio()  {
@@ -118,7 +121,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const {duration, currentTime} = e.srcElement;
     const timePercent = (currentTime / duration) * 100;
     track.value = timePercent;
-    timeCurrent.textContent = parseInt(audio.currentTime);
+
+    currentMin = parseInt(audio.currentTime / 60);
+    currentSec = parseInt(audio.currentTime % 60);
+    
+    timeCurrent.textContent = `${currentMin.toString()}:${currentSec.toString()}`;
   }
 
   audio.addEventListener('timeupdate', updateTime);
