@@ -2,27 +2,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const songs = [
     {
-      artist: 'The Cure',
+      band: 'The Cure',
       song: 'Lovesong',
       src: 'assets/music/The Cure - Lovesong.mp3',
-      cover: 'audio-player/assets/images/CureCover.jpg',
-      background: 'audio-player/assets/images/Cure.jpg',
+      cover: 'assets/images/CureCover.jpg',
+      background: 'assets/images/Cure.jpg',
       duration: '3:28',
     },
     {
-      artist: 'Florence And The Machine',
+      band: 'Florence And The Machine',
       song: 'Dog Days Are Over',
-      src: '/assets/music/Florence And The Machine - Dog Days Are Over.mp3',
-      cover: '/audio-player/assets/images/FlorenceCover.jpg',
-      background: '/audio-player/assets/images/Florence.jpg',
+      src: 'assets/music/Florence And The Machine - Dog Days Are Over.mp3',
+      cover: 'assets/images/FlorenceCover.jpg',
+      background: 'assets/images/Florence.jpg',
       duration: '4:12',
     },
     {
-      artist: 'Tears For Fears',
+      band: 'Tears For Fears',
       song: 'Everybody Wants To Rule The World',
-      src: '/assets/music/Tears For Fears- Everybody Wants To Rule The World.mp3',
-      cover: '/audio-player/assets/images/TearsCover.jpg',
-      background: '/audio-player/assets/images/Tears.jpg',
+      src: 'assets/music/Tears For Fears- Everybody Wants To Rule The World.mp3',
+      cover: 'assets/images/TearsCover.jpg',
+      background: 'assets/images/Tears.jpg',
       duration: '4:11',
     },
   ]
@@ -31,8 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const btnPlay = document.querySelector('#playPause');
   const coverBack = document.querySelector('body');
   const coverAlbum = document.querySelector('.player-container__cover');
-  const btnPrev = document.querySelector('.prev');
-  const btnNext = document.querySelector('.next');
+  const btnPrev = document.querySelector('#prev');
+  const btnNext = document.querySelector('#next');
+  const nameSong = document.querySelector('.song');
+  const nameBand = document.querySelector('.band');
 
   let isPlay = false;
   let playNum = 0;
@@ -63,7 +65,34 @@ document.addEventListener('DOMContentLoaded', function() {
   //Next song
   function next() {
     playNum++;
+    if (playNum >= songs.length) {
+      playNum = 0;
+    }
     coverBack.style.backgroundImage = `url('${songs[playNum].background}')`;
     coverAlbum.style.backgroundImage = `url('${songs[playNum].cover}')`;
+
+    //Song name and band
+    nameSong.textContent = songs[playNum].song;
+    nameBand.textContent = songs[playNum].band;
   }
+
+  btnNext.addEventListener('click', next);
+
+  //Previous song
+  function prev() {
+    playNum--;
+    if (playNum < 0) {
+      playNum = 2;
+    }
+    coverBack.style.backgroundImage = `url('${songs[playNum].background}')`;
+    coverAlbum.style.backgroundImage = `url('${songs[playNum].cover}')`;
+
+    //Song name and band
+    nameSong.textContent = songs[playNum].song;
+    nameBand.textContent = songs[playNum].band;
+  }
+
+  btnPrev.addEventListener('click', prev);
+
+  
 })
