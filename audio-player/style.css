@@ -35,6 +35,11 @@ body {
   height: 60%;
   border-radius: 10px;
   user-select: none;
+  background-image: url(/audio-player/assets/images/CureCover.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background .2s;
 }
 
 .player-container__cover img {
@@ -88,7 +93,7 @@ body {
   border-radius: 100%;
   border: 2px #CECECA solid;
   cursor: pointer;
-  transition: box-shadow .2s;
+  transition: box-shadow .2s, background .2s;
 }
 
 .btn:hover {

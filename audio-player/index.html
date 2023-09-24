@@ -9,10 +9,8 @@
 <body>
 	<div class="wrapper">
 		<div class="player-container">
-			<div class="player-container__cover">
-				<img src="/audio-player/assets/images/CureCover.jpg" alt="">
-			</div>
-			<audio src="assets/music/The Cure - Lovesong.mp3"></audio>
+			<div class="player-container__cover"></div>
+			<audio id="audio" src="assets/music/The Cure - Lovesong.mp3"></audio>
 			<div class="player-container__control">
 				<div class="player__title">
 					<h2 class="song">Lovesong</h2>
@@ -25,7 +23,7 @@
 				</div>
 				<div class="control__buttons">
 					<button class="btn prev"></button>
-					<button class="btn play"></button>
+					<button class="btn play" id="playPause"></button>
 					<button class="btn next"></button>
 				</div>
 			</div>
@@ -40,5 +38,6 @@
 			<img src="/audio-player/assets/icons/rs_school_js.svg" alt="">
 		</a>
 	</footer>
+	<script src="script.js"></script>
 </body> 
 </html>
