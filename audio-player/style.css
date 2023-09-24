@@ -6,7 +6,7 @@
 
 body {
   position: relative;
-  background-image: url(audio-player/assets/images/Cure.jpg);
+  background-image: url(assets/images/Cure.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,7 +35,7 @@ body {
   height: 60%;
   border-radius: 10px;
   user-select: none;
-  background-image: url(audio-player/assets/images/CureCover.jpg);
+  background-image: url(assets/images/CureCover.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -105,23 +105,23 @@ body {
 }
 
 .btn.prev {
-  background: url(audio-player/assets/icons/Previous.svg) center no-repeat;
+  background: url(assets/icons/Previous.svg) center no-repeat;
 }
 
 .btn.play {
   width: 70px;
   height: 70px;
-  background: url(audio-player/assets/icons/Play.svg) center no-repeat;
+  background: url(assets/icons/Play.svg) center no-repeat;
 }
 
 .btn.pause {
   width: 70px;
   height: 70px;
-  background: url(audio-player/assets/icons/Pause.svg) center no-repeat;
+  background: url(assets/icons/Pause.svg) center no-repeat;
 }
 
 .btn.next {
-  background: url(audio-player/assets/icons/Next.svg) center no-repeat;
+  background: url(assets/icons/Next.svg) center no-repeat;
 }
 
 footer {
