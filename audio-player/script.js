@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
       duration: '4:12',
     },
     {
-      band: 'Tears For Fears',
-      song: 'Everybody Wants To Rule The World',
-      src: 'assets/music/Tears For Fears - Everybody Wants To Rule The World.mp3',
-      cover: 'assets/images/TearsCover.jpg',
-      background: 'assets/images/Tears.jpg',
-      duration: '4:11',
+      band: 'David Bowie',
+      song: 'Changes',
+      src: 'assets/music/David Bowie - Changes.mp3',
+      cover: 'assets/images/BowieCover.jpg',
+      background: 'assets/images/BowieCover.jpg',
+      duration: '3:35',
     },
   ]
 
