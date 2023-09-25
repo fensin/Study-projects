@@ -21,8 +21,8 @@ body {
 }
 
 .player-container {
-  min-width: 400px; 
-  height: 85vh;
+  min-width: 360px; 
+  height: 600px;
   border-radius: 10px;
   background-color: #2C201B;
   overflow: hidden;
