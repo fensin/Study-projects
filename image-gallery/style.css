@@ -53,18 +53,26 @@ header {
   position: relative;
 }
 
-.head__search svg {
+.searchBtn {
   width: 20px;
   height: 20px; 
   position: absolute;
   right: 5px;
   cursor: pointer;
-  transition: fill 1s, box-shadow 1s;
+  transition: scale .2s, box-shadow 1s;
 }
 
-.head__search svg:hover {
-  fill: var(--brand);
+.searchBtn img {
+  width: 100%;
+}
+
+.searchBtn:hover {
+  scale: 1.3;
 } 
+
+.searchBtn:active {
+  scale: 1.1;
+}
 
 .head__search input {
   border: 1px black solid;
@@ -82,20 +90,23 @@ main {
   margin-top: 10px;
 }
 
-.gallery {
+main .container {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 30px;
 }
 
-.img {
-  background-image: url(/image-gallery/icons/photo-1679679008477-eeb6d3480167.jpg);
-  background-position: center;
-  background-size: cover;
+.imgWrapper {
   width: 360px;
-  height: 160px;
+  height: 250px;
   cursor: pointer;
+}
+
+.imgWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 footer {
