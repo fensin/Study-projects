@@ -44,3 +44,9 @@ function searchImgs() {
 }
 
 searchBtn.addEventListener('click', searchImgs);
+
+searchInput.addEventListener('keydown', (e) => {
+  if(e.code == 'Enter') {
+    searchImgs();
+  }
+})
