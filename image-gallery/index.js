@@ -4,6 +4,7 @@ const client_id = 'cDQviJlolRiyhIQgknk55Bi6vD_frBdFn-zfKNjol1Y';
 const container = document.querySelector('#gallery');
 const searchInput = document.querySelector('#search');
 const inputContainer = document.querySelector('.head__search')
+const form = document.querySelector('form');
 
 let inputData = 'gundam';
 
@@ -51,7 +52,7 @@ const eraseBtn = document.querySelector('#btnErase');
 //Show error page
 function noImages() {
   container.classList.add('noImg');
-  container.innerHTML = `<h4>Sorry, there is no images on <span>${inputData}</span> request. Try search something else</h4>`;
+  container.innerHTML = `<h4>There is no images on <span>${inputData}</span> request. Try search something else.</h4>`;
   const noSvgContainer = document.createElement('div');
   noSvgContainer.classList.add('noSvgContainer');
   container.appendChild(noSvgContainer);
@@ -89,8 +90,7 @@ searchInput.addEventListener('input', () => {
 })
 
 //Search enter press
-searchInput.addEventListener('keydown', (e) => {
-  if(e.code == 'Enter') {
-    searchImgs();
-  }
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  searchImgs();
 })
