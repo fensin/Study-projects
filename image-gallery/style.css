@@ -34,7 +34,7 @@ header {
   align-items: center;
   margin-left: 10px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #7b2cbf;
+  color: var(--brand);
 }
 
 .icon {
@@ -57,28 +57,40 @@ header {
   width: 20px;
   height: 20px; 
   position: absolute;
-  right: 5px;
-  cursor: pointer;
   transition: scale .2s, box-shadow 1s;
   background-position: center;
   background-size: contain;
 }
 
-.search {
-  background-image: url(/image-gallery/searchicon.svg);
+.inputBtn.active {
+  cursor: pointer;
 }
 
-.close {
-  background-image: url(/image-gallery/cross-svgrepo-com.svg);
-  scale: .6;
-}
-
-.inputBtn:hover {
+.inputBtn.active:hover {
   scale: 1.3;
 } 
 
-.inputBtn:active {
+.inputBtn.active:active {
   scale: 1.1;
+} 
+
+.inputBtn.inactive {
+  cursor: default;
+}
+
+.search {
+  background-image: url(./icons/searchicon.svg);
+  left: 5px;
+}
+
+.close {
+  background-image: url(./icons/cross-svgrepo-com.svg);
+  scale: .6;
+}
+
+.inputBtn.close {
+  right: 5px;
+  cursor: pointer;
 }
 
 .close.inputBtn:hover {
@@ -89,15 +101,19 @@ header {
   scale: .7;
 }
 
+.inputBtn.close.inactive {
+  visibility: hidden;
+}
+
 .head__search input {
   border: 1px black solid;
-  padding: 5px 22px;
+  padding: 5px 25px;
   border-radius: 15px;
   transition: all .5s;
 }
 
 .head__search input:focus {
-  box-shadow: 0 0 10px 3px #7b2cbf;
+  box-shadow: 0 0 10px 3px var(--brand);
   outline: none;
 }
 
@@ -141,6 +157,39 @@ footer {
   width: 210px;
 }
 
+h4 {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+}
+
+h4 span {
+  color: var(--brand);
+}
+
+.container.noImg {
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.noSvgContainer {
+  width: 400px;
+  height: 400px;
+  background-image: url(./icons/noImgs.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.noImgsSvg {
+  background-image: url(./icons/noImgs.svg);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
 
 @media screen and (max-width: 576px) {
   .head {
