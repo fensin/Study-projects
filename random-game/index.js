@@ -62,7 +62,7 @@ function shootBall() {
 function lose() {
   _isPlaying = false;
   paddleX = canvas.width / 2;
-  ballX = canvas.width / 2;
+  ballX = canvas.width / 2 + paddleWidth / 2;
   ballY = canvas.height - paddleHeight - 8;
   dx = 2;
   dy = -2;
@@ -77,6 +77,7 @@ function draw() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   drawBall();
   drawPaddle();
+  requestAnimationFrame(draw);
 }
 
 //control mouse
@@ -93,5 +94,5 @@ function controlMouse(e) {
   }
 }
 
-setInterval(draw, 30);
+requestAnimationFrame(draw);
 document.addEventListener('mousemove', controlMouse);
