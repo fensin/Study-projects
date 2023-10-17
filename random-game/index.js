@@ -34,7 +34,7 @@ let ballHeight = 5;
 function drawBall() {
   context.beginPath();
   context.rect(ballX, ballY, ballWidth, ballHeight);
-  context.fillStyle = '#ff0000';
+  context.fillStyle = '#F87171';
   context.fill();
   context.closePath();
 }
@@ -77,6 +77,8 @@ function draw() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   drawBall();
   drawPaddle();
+  createBricks();
+  drawBricks();
   requestAnimationFrame(draw);
 }
 
@@ -90,6 +92,56 @@ function controlMouse(e) {
       canvas.addEventListener('click', shootBall);
     } else if (_isPlaying) {
       canvas.removeEventListener('click', shootBall);
+    }
+  }
+}
+
+//bricks
+
+let bricks = [];
+
+const brickRow = 6;
+const brickColumn = 12;
+const brickWidth = 70;
+const brickHeight = 10;
+const brickX = 20;
+const brickY = 50;
+
+function createBricks() {
+  for (let c = 0; c < brickColumn; c++) {
+    for (let r = 0; r < brickRow; r++) {
+      let brick = {
+        x: brickX + c * brickWidth + c * 10,
+        y: brickY + r * brickHeight + r * 10,
+        width: brickWidth,
+        height: brickHeight,
+        display: true,
+      };
+      bricks.push(brick);
+      if (brick.display) {
+        if (
+          ballX > brick.x &&
+          ballX < brick.x + brickWidth &&
+          ballY > brick.y &&
+          ballY < brick.y + brickHeight
+        ) {
+          dy = -dy;
+          brick.display = false;
+        }
+      }
+    }
+  }
+}
+
+function drawBricks() {
+  for (let i = 0; i < bricks.length; i++) {
+    let brick = bricks[i];
+    if (brick.display) {
+      context.beginPath();
+      context.fillStyle = '#4ADE80';
+      context.fillRect(brick.x, brick.y, brick.width, brick.height);
+      context.fill();
+      context.closePath();
     }
   }
 }
