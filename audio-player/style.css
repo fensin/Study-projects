@@ -1,0 +1,157 @@
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background-image: url(assets/images/Cure.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(15px);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.player-container {
+  min-width: 360px; 
+  height: 600px;
+  border-radius: 10px;
+  background-color: #2C201B;
+  overflow: hidden;
+}
+
+.player-container__cover {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 60%;
+  border-radius: 10px;
+  user-select: none;
+  background-image: url(assets/images/CureCover.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: background .2s;
+}
+
+.player-container__cover img {
+  width: 100%;
+  height: 100%;
+}
+
+.player-container__control {
+  background-color: #2C201B;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.player__title {
+  margin-left: 20px;
+  color: #CECECA;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 20px 15px;
+}
+
+.band {
+  font-size: small;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  color: #CECECA;
+  margin: 0 5px;
+}
+
+.control__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; 
+  margin-top: 20px;
+}
+
+.track {
+  width: 95%;
+  accent-color: #CECECA;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 2px #CECECA solid;
+  cursor: pointer;
+  transition: box-shadow .2s, background .2s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 5px 5px #CECECA;
+}
+
+.btn:active {
+  scale: 0.95;
+}
+
+.btn.prev {
+  background: url(assets/icons/Previous.svg) center no-repeat;
+}
+
+.btn.play {
+  width: 70px;
+  height: 70px;
+  background: url(assets/icons/Play.svg) center no-repeat;
+}
+
+.btn.pause {
+  width: 70px;
+  height: 70px;
+  background: url(assets/icons/Pause.svg) center no-repeat;
+}
+
+.btn.next {
+  background: url(assets/icons/Next.svg) center no-repeat;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  opacity: 0.7;
+  background-color: #CECECA;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 10px 0 0;
+  margin-right: 20px;
+}
+
+footer > * {
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.git img{
+  width: 50%;
+  height: 50%;
+}
+
+.school img {
+  height: 90%;
+  width: 90%;
+}
