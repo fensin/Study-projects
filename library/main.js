@@ -53,8 +53,8 @@ icon.addEventListener('click', profileToggle);
 body.addEventListener('click', profileBack);
 
 //LogIn modal
-const btnLogIn = document.querySelector('#logIn');
-const btnRegister = document.querySelector('#register');
+const btnLogIn = document.querySelectorAll('#logIn');
+const btnRegister = document.querySelectorAll('#register');
 const modalWrap = document.querySelector('#modalWrap');
 const modalLog = document.querySelector('.log');
 const modalReg = document.querySelector('.reg');
@@ -62,10 +62,20 @@ const modalCross = document.querySelectorAll('.modal__cross');
 const lnkLogIn = document.querySelector('#lnkLog');
 const lnkReg = document.querySelector('#lnkReg');
 
-btnLogIn.addEventListener('click', () => {
-  profileToggle();
-  modalWrap.classList.toggle('modal_hidden');
-  modalLog.classList.toggle('active');
+btnLogIn.forEach(function (item) {
+  item.addEventListener('click', () => {
+    profileToggle();
+    modalWrap.classList.toggle('modal_hidden');
+    modalLog.classList.toggle('active');
+  });
+});
+
+btnRegister.forEach(function (item) {
+  item.addEventListener('click', () => {
+    profileToggle();
+    modalWrap.classList.toggle('modal_hidden');
+    modalReg.classList.add('active');
+  });
 });
 
 function closeModals() {
@@ -78,12 +88,6 @@ modalCross.forEach(function (item) {
   item.addEventListener('click', () => {
     closeModals();
   });
-});
-
-btnRegister.addEventListener('click', () => {
-  profileToggle();
-  modalWrap.classList.toggle('modal_hidden');
-  modalReg.classList.add('active');
 });
 
 function backClose(e) {
