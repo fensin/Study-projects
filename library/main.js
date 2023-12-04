@@ -10,15 +10,19 @@ const body = document.querySelector('body');
 
 //Burger menu open and close function
 function burgerToggle() {
-  header.classList.toggle('open');
-  modalProfileNoAuth.classList.remove('profActive');
-  backActivate();
-} 
+  const w = window.innerWidth;
+  console.log(w);
+  if (w <= 1024) {
+    header.classList.toggle('open');
+    modalProfileNoAuth.classList.remove('profActive');
+    backActivate();
+  }
+}
 
 burger.addEventListener('click', burgerToggle);
 
 //Backgroung changing
-function backActivate () {               
+function backActivate() {
   burgerBack.classList.toggle('active');
 }
 
@@ -26,22 +30,20 @@ function backActivate () {
 burgerBack.addEventListener('click', burgerToggle);
 
 //Click on burger items
-burgerItem.forEach (function (item) {
+burgerItem.forEach(function (item) {
   item.addEventListener('click', burgerToggle);
-})
+});
 
 //Click on profile icon
-function profileToggle () {
+function profileToggle() {
   modalProfileNoAuth.classList.toggle('profActive');
   header.classList.remove('open');
   burgerBack.classList.remove('active');
 }
 
-function profileBack (e) {
+function profileBack(e) {
   const isProfileClick = e.composedPath().includes(modalProfileNoAuth);
   const isIconClick = e.composedPath().includes(icon);
-  console.log(isProfileClick)
-  console.log(isIconClick)
   if (isProfileClick == false && isIconClick == false) {
     modalProfileNoAuth.classList.remove('profActive');
   }
@@ -64,31 +66,31 @@ btnLogIn.addEventListener('click', () => {
   profileToggle();
   modalWrap.classList.toggle('modal_hidden');
   modalLog.classList.toggle('active');
-})
+});
 
-function closeModals () {
+function closeModals() {
   modalWrap.classList.add('modal_hidden');
   modalLog.classList.remove('active');
   modalReg.classList.remove('active');
 }
 
-modalCross.forEach (function (item) {
+modalCross.forEach(function (item) {
   item.addEventListener('click', () => {
-    closeModals()
-  })
-})
+    closeModals();
+  });
+});
 
 btnRegister.addEventListener('click', () => {
   profileToggle();
   modalWrap.classList.toggle('modal_hidden');
   modalReg.classList.add('active');
-})
+});
 
-function backClose (e) {
+function backClose(e) {
   const click = e.composedPath().includes(modalLog);
   const click2 = e.composedPath().includes(modalReg);
   if (click == false && click2 == false) {
-    closeModals()
+    closeModals();
   }
 }
 
@@ -97,9 +99,9 @@ modalWrap.addEventListener('click', backClose);
 lnkReg.addEventListener('click', () => {
   modalLog.classList.remove('active');
   modalReg.classList.add('active');
-})
+});
 
 lnkLogIn.addEventListener('click', () => {
   modalReg.classList.remove('active');
   modalLog.classList.add('active');
-})
+});
